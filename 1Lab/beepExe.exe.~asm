@@ -1,0 +1,27 @@
+; beep.asm
+.model small
+.stack 100h
+.code
+start:
+mov ax,@data
+mov ds,ax
+
+mov dx,offset message
+mov ah,9
+int 21h
+
+
+mov dl,07  ;beep sound
+mov ah,2
+int 21h
+
+mov ax,4c00h
+int 21h
+
+.data
+message db "home, sweet home!",0Dh,0Ah,'$'
+end start
+
+
+
+; [SOURCE]: \\Mac\Home\Desktop\cKrasKras\assembly\1\beepExe.asm

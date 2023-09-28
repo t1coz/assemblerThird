@@ -1,0 +1,381 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+lab2.exe -- emu8086 assembler version: 4.05  
+ 
+[ 9/27/2023  --  8:06:48 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .stack 100h
+[   3]        :                                       
+[   4]        :                                       .data
+[   5]        :                                       
+[   6]        :                                       size equ 200
+[   7]    0100: 24 24 24 24 24 24 24 24 24 24 24 24   string db size dup ('$')
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24             
+[   8]    01C8: 24 24 24 24 24 24 24 24 24 24 24 24   slovo db size dup ('$')
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24 24 24 24 24 
+                24 24 24 24 24 24 24 24             
+[   9]        :                                       
+[  10]    0290: 45 6E 74 65 72 20 74 68 65 20 73 74   str1 db "Enter the string: $"
+                72 69 6E 67 3A 20 24                
+[  11]    02A3: 45 6E 74 65 72 65 64 20 73 74 72 69   str2 db "Entered string: $"
+                6E 67 3A 20 24                      
+[  12]    02B4: 45 6E 74 65 72 20 74 68 65 20 77 6F   str3 db "Enter the word: $"
+                72 64 3A 20 24                      
+[  13]    02C5: 45 6E 74 65 72 65 64 20 77 6F 72 64   str4 db "Entered word: $"
+                3A 20 24                            
+[  14]    02D4: 57 6F 72 64 20 6E 6F 74 20 66 6F 75   str5 db "Word not found.$"
+                6E 64 2E 24                         
+[  15]    02E4: 53 74 72 69 6E 67 20 69 73 20 65 6D   str6 db "String is empty$"
+                70 74 79 24                         
+[  16]    02F4: 57 6F 72 64 20 69 73 20 65 6D 70 74   str7 db "Word is empty$"
+                79 24                               
+[  17]    0302: 57 6F 72 64 20 66 6F 75 6E 64 2E 24   str8 db "Word found.$"
+                                                    
+[  18]    030E: 49 74 27 73 20 74 68 65 20 66 69 72   str9 db "It's the first word$"
+                73 74 20 77 6F 72 64 24             
+[  19]    0322: 46 69 6E 69 73 68 69 6E 67 20 74 68   close db "Finishing the program.",0Dh,0Ah,'$'
+                65 20 70 72 6F 67 72 61 6D 2E 0D 0A 
+                24                                  
+[  20]    033B: 46 69 6E 61 6C 20 73 74 72 69 6E 67   result db "Final string: $"
+                3A 20 24                            
+[  21]    034A: 0D 0A 24                              enter db 0Dh,0Ah,'$'
+[  22]        :                                       
+[  23]        :                                       .code
+[  24]        :                                       
+[  25]    0350:                                       Output_string proc
+[  26]    0350: B4 09                                 mov ah,9
+[  27]    0352: CD 21                                 int 21h
+[  28]    0354: C3                                    ret
+[  29]        :                                       Output_string endp
+[  30]        :                                       
+[  31]    0355:                                       Output proc
+[  32]    0355: 80 38 0D                              cmp bx[si], 0Dh
+[  33]    0358: 8A 10 B4 06 CD 21                     Output_sumb bx[si]
+[  34]    035E: 46                                    inc si
+[  35]    035F: 80 38 0D                              cmp bx[si],0Dh
+[  36]    0362: 75 F1                                 jne call Output
+[  37]    0364: C3                                    ret
+[  38]        :                                       endp
+[  39]        :                                       
+[  40]        :                                       Output_sumb macro symb
+[  41]        :                                       mov dl,symb
+[  42]        :                                       mov ah,06h
+[  43]        :                                       int 21h
+[  44]        :                                       endm
+[  45]        :                                       
+[  46]        :                                       Input_string macro str
+[  47]        :                                       lea dx,str
+[  48]        :                                       mov offset str,size
+[  49]        :                                       mov ah,0Ah
+[  50]        :                                       int 21h
+[  51]        :                                       endm
+[  52]        :                                       
+[  53]    0365:                                       Exit proc
+[  54]    0365: BA 4A 02                              mov dx,offset enter
+[  55]    0368: E8 E5 FF                              call Output_string
+[  56]    036B: BA 3B 02                              mov dx,offset result
+[  57]    036E: E8 DF FF                              call Output_string
+[  58]    0371: BB 00 00                              mov bx,offset string
+[  59]    0374: BE 02 00                              mov si,2
+[  60]    0377: E8 DB FF                              call Output
+[  61]    037A: BA 4A 02                              mov dx,offset enter
+[  62]    037D: E8 D0 FF                              call Output_string
+[  63]    0380: BA 22 02                              mov dx,offset close
+[  64]    0383: E8 CA FF                              call Output_string
+[  65]    0386: B8 00 4C                              mov ax,4C00h
+[  66]    0389: CD 21                                 int 21h
+[  67]    038B: C3                                    ret
+[  68]        :                                       Exit endp
+[  69]        :                                       
+[  70]    038C:                                       Empty_exit proc
+[  71]    038C: BA 4A 02                              mov dx,offset enter
+[  72]    038F: E8 BE FF                              call Output_string
+[  73]    0392: BA 22 02                              mov dx,offset close
+[  74]    0395: E8 B8 FF                              call Output_string
+[  75]    0398: B8 00 4C                              mov ax,4C00h
+[  76]    039B: CD 21                                 int 21h
+[  77]    039D: C3                                    ret
+[  78]        :                                       Empty_exit endp
+[  79]        :                                       
+[  80]    039E:                                       Counter proc
+[  81]    039E: FE C4                                 inc ah
+[  82]    03A0: C3                                    ret
+[  83]        :                                       Counter endp
+[  84]        :                                       
+[  85]    03A1:                                       Moove proc
+[  86]    03A1: 4E                                    dec si
+[  87]    03A2: 83 FE 01                              cmp si,offset string[1]
+[  88]    03A5: 74 F7                                 je call Counter
+[  89]    03A7: 80 3C 20                              cmp [si],' '
+[  90]    03AA: 75 0C                                 jne call Check_is_tab
+[  91]    03AC: 80 3C 09                              cmp [si],09h
+[  92]    03AF: 75 01                                 jne call Check_is_space
+[  93]    03B1: C3                                    ret
+[  94]        :                                       Moove endp
+[  95]        :                                       
+[  96]    03B2:                                       Check_is_space proc
+[  97]    03B2: 80 3C 20                              cmp [si],' '
+[  98]    03B5: 75 EA                                 jne call Moove
+[  99]    03B7: C3                                    ret
+[ 100]        :                                       Check_is_space endp
+[ 101]        :                                       
+[ 102]    03B8:                                       Check_is_tab proc
+[ 103]    03B8: 80 3C 09                              cmp [si],09h
+[ 104]    03BB: 75 E4                                 jne call Moove
+[ 105]    03BD: C3                                    ret
+[ 106]        :                                       Check_is_tab endp
+[ 107]        :                                       
+[ 108]    03BE:                                       Moove_space proc
+[ 109]    03BE: 4E                                    dec si
+[ 110]    03BF: 83 FE 01                              cmp si,offset string[1]
+[ 111]    03C2: 74 DA                                 je call Counter
+[ 112]    03C4: 80 3C 20                              cmp [si],' '
+[ 113]    03C7: 74 F5                                 je call Moove_space
+[ 114]    03C9: 80 3C 09                              cmp [si],09h
+[ 115]    03CC: 74 F0                                 je call Moove_space
+[ 116]    03CE: C3                                    ret
+[ 117]        :                                       Moove_space endp
+[ 118]        :                                       
+[ 119]    03CF:                                       Delete proc
+[ 120]    03CF: 46                                    inc si
+[ 121]    03D0: 8A 14                                 mov dl,[si]
+[ 122]    03D2: 4E                                    dec si
+[ 123]    03D3: 88 14                                 mov [si],dl
+[ 124]    03D5: 46                                    inc si
+[ 125]    03D6: 80 3C 0D                              cmp [si],0Dh
+[ 126]    03D9: 75 F4                                 jne call Delete
+[ 127]    03DB: 8B F3                                 mov si,bx
+[ 128]    03DD: 80 3C 20                              cmp [si],' '
+[ 129]    03E0: 75 01                                 jne call Check_2
+[ 130]    03E2: C3                                    ret
+[ 131]        :                                       Delete endp
+[ 132]        :                                       
+[ 133]    03E3:                                       Check_2 proc
+[ 134]    03E3: 80 3C 09                              cmp [si],09h
+[ 135]    03E6: 75 E7                                 jne call Delete
+[ 136]    03E8: C3                                    ret
+[ 137]        :                                       Check_2 endp
+[ 138]        :                                       
+[ 139]    03E9:                                       start:
+[ 140]    03E9: B8 10 00                              mov ax,@data
+[ 141]    03EC: 8E D8                                 mov ds,ax
+[ 142]    03EE: BA 90 01                              mov dx,offset str1
+[ 143]    03F1: E8 5C FF                              call Output_string
+[ 144]    03F4: BA 00 00 C6 06 00 00 C8 B4 0A CD 21   Input_string string
+                                                    
+[ 145]        :                                       
+[ 146]    0400: BA 4A 02                              mov dx,offset enter
+[ 147]    0403: E8 4A FF                              call Output_string
+[ 148]    0406: BA B4 01                              mov dx,offset str3
+[ 149]    0409: E8 44 FF                              call Output_string
+[ 150]    040C: BA C8 00 C6 06 C8 00 C8 B4 0A CD 21   Input_string slovo
+                                                    
+[ 151]        :                                       
+[ 152]    0418: 80 3E 01 00 00                        cmp string[1],0
+[ 153]    041D: 74 31                                 je isEmpty
+[ 154]        :                                       
+[ 155]    041F: BA 4A 02                              mov dx,offset enter
+[ 156]    0422: E8 2B FF                              call Output_string
+[ 157]    0425: BA A3 01                              mov dx,offset str2
+[ 158]    0428: E8 25 FF                              call Output_string
+[ 159]    042B: BB 00 00                              mov bx,offset string
+[ 160]    042E: BE 02 00                              mov si,2
+[ 161]    0431: E8 21 FF                              call Output
+[ 162]        :                                       
+[ 163]    0434: 80 3E C9 00 00                        cmp slovo[1],0
+[ 164]    0439: 74 15                                 je isEmpty
+[ 165]        :                                       
+[ 166]    043B: BA 4A 02                              mov dx,offset enter
+[ 167]    043E: E8 0F FF                              call Output_string
+[ 168]    0441: BA C5 01                              mov dx,offset str4
+[ 169]    0444: E8 09 FF                              call Output_string
+[ 170]    0447: BB C8 00                              mov bx,offset slovo
+[ 171]    044A: BE 02 00                              mov si,2
+[ 172]    044D: E8 05 FF                              call Output
+[ 173]        :                                       
+[ 174]    0450:                                       isEmpty:
+[ 175]    0450: 8A 26 01 00                           mov ah,[string[1]]
+[ 176]    0454: 80 FC 00                              cmp ah,0
+[ 177]    0457: 74 0B                                 je String_is_empty
+[ 178]    0459: 8A 26 C9 00                           mov ah,[slovo[1]]
+[ 179]    045D: 80 FC 00                              cmp ah,0
+[ 180]    0460: 74 17                                 je Slovo_is_empty
+[ 181]    0462: 75 2A                                 jne Find
+[ 182]        :                                       
+[ 183]    0464:                                       String_is_empty:
+[ 184]    0464: B2 0D B4 06 CD 21                     Output_sumb 0Dh
+[ 185]    046A: B2 0A B4 06 CD 21                     Output_sumb 0Ah
+[ 186]    0470: BA E4 01                              mov dx,offset str6
+[ 187]    0473: E8 DA FE                              call Output_string
+[ 188]    0476: E8 13 FF                              call Empty_exit
+[ 189]        :                                       
+[ 190]    0479:                                       Slovo_is_empty:
+[ 191]    0479: B2 0D B4 06 CD 21                     Output_sumb 0Dh
+[ 192]    047F: B2 0A B4 06 CD 21                     Output_sumb 0Ah
+[ 193]    0485: BA F4 01                              mov dx,offset str7
+[ 194]    0488: E8 C5 FE                              call Output_string
+[ 195]    048B: E8 FE FE                              call Empty_exit
+[ 196]        :                                       
+[ 197]    048E:                                       Find:
+[ 198]    048E: BE 01 00                              mov si,offset string[1]
+[ 199]    0491: BF CA 00                              mov di,offset slovo[2]
+[ 200]    0494: EB 00                                 jmp Find_symbol
+[ 201]        :                                       
+[ 202]    0496:                                       Find_symbol:
+[ 203]    0496: 46                                    inc si
+[ 204]    0497: 80 3C 0D                              cmp [si],0Dh
+[ 205]    049A: 74 51                                 je notFound
+[ 206]    049C: 8A 14                                 mov dl,[si]
+[ 207]    049E: 80 3C 20                              cmp [si],' '
+[ 208]    04A1: 74 F3                                 je Find_symbol
+[ 209]    04A3: 80 3C 09                              cmp [si],09h
+[ 210]    04A6: 74 EE                                 je Find_symbol
+[ 211]    04A8: 80 FA 0D                              cmp dl,0Dh
+[ 212]    04AB: 75 03 E9 B5 FE                        je call Exit
+[ 213]    04B0: 3A 15                                 cmp dl,[di]
+[ 214]    04B2: 75 04                                 jne Skip_slovo
+[ 215]    04B4: EB 14                                 jmp Find_slovo
+[ 216]    04B6: E2 DE                                 loop Find_symbol
+[ 217]        :                                       
+[ 218]    04B8:                                       Skip_slovo:
+[ 219]    04B8: 80 3C 20                              cmp [si],' '
+[ 220]    04BB: 74 D9                                 je Find_symbol
+[ 221]    04BD: 80 3C 09                              cmp [si],09h
+[ 222]    04C0: 74 D4                                 je Find_symbol
+[ 223]    04C2: 80 3C 0D                              cmp [si],0Dh
+[ 224]    04C5: 74 26                                 je notFound
+[ 225]    04C7: 46                                    inc si
+[ 226]    04C8: E2 EE                                 loop Skip_slovo
+[ 227]        :                                       
+[ 228]    04CA:                                       Find_slovo:
+[ 229]    04CA: 46                                    inc si
+[ 230]    04CB: 47                                    inc di
+[ 231]    04CC: 80 3D 0D                              cmp [di],0Dh
+[ 232]    04CF: 74 08                                 je isEnd
+[ 233]    04D1: 8A 14                                 mov dl,[si]
+[ 234]    04D3: 3A 15                                 cmp dl,[di]
+[ 235]    04D5: 74 F3                                 je loop Find_slovo
+[ 236]    04D7: EB 0F                                 jmp isStart
+[ 237]        :                                       
+[ 238]    04D9:                                       isEnd:
+[ 239]    04D9: 80 3C 20                              cmp [si],' '
+[ 240]    04DC: 74 1E                                 je Found
+[ 241]    04DE: 80 3C 09                              cmp [si],09h
+[ 242]    04E1: 74 19                                 je Found
+[ 243]    04E3: 80 3C 0D                              cmp [si],0Dh
+[ 244]    04E6: 74 14                                 je Found
+[ 245]        :                                       
+[ 246]    04E8:                                       isStart:
+[ 247]    04E8: BF CA 00                              mov di,offset slovo[2]
+[ 248]    04EB: EB CB                                 jmp Skip_slovo
+[ 249]        :                                       
+[ 250]    04ED:                                       notFound:
+[ 251]    04ED: BA 4A 02                              mov dx,offset enter
+[ 252]    04F0: E8 5D FE                              call Output_string
+[ 253]    04F3: BA D4 01                              mov dx,offset str5
+[ 254]    04F6: E8 57 FE                              call Output_string
+[ 255]    04F9: E8 69 FE                              call Exit
+[ 256]        :                                       
+[ 257]    04FC:                                       Found:
+[ 258]    04FC: 46                                    inc si
+[ 259]    04FD: BA 4A 02                              mov dx,offset enter
+[ 260]    0500: E8 4D FE                              call Output_string
+[ 261]    0503: BA 02 02                              mov dx,offset str8
+[ 262]    0506: E8 47 FE                              call Output_string
+[ 263]    0509: EB 00                                 jmp Delete_slovo
+[ 264]        :                                       
+[ 265]    050B:                                       Delete_slovo:
+[ 266]    050B: B4 00                                 mov ah,0
+[ 267]    050D: E8 AE FE                              call Moove_space
+[ 268]    0510: E8 8E FE                              call Moove
+[ 269]    0513: 80 FC 01                              cmp ah,1
+[ 270]    0516: 75 03 E9 4A FE                        je call Exit
+[ 271]    051B: E8 A0 FE                              call Moove_space
+[ 272]    051E: 80 FC 01                              cmp ah,1
+[ 273]    0521: 75 03 E9 3F FE                        je call Exit
+[ 274]    0526: E8 78 FE                              call Moove
+[ 275]    0529: 8B DE                                 mov bx,si
+[ 276]    052B: E8 A1 FE                              call Delete
+[ 277]    052E: E8 34 FE                              call Exit
+[ 278]        :                                       
+[ 279]        :                                       end start
+[ 280]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 31      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 04      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: 0F      -   check sum (l.byte)
+0013: B1      -   check sum (h.byte)
+0014: 99      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 35      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 9A      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 35      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

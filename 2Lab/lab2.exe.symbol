@@ -1,0 +1,49 @@
+< THE SYMBOL TABLE >  lab2.exe  --  emu8086 assembler version: 4.05 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00010     	-5        	SEGMENT   	(ITSELF)  
+STRING                   	00000     	1         	VAR       	data      
+SLOVO                    	000C8     	1         	VAR       	data      
+STR1                     	00190     	1         	VAR       	data      
+STR2                     	001A3     	1         	VAR       	data      
+STR3                     	001B4     	1         	VAR       	data      
+STR4                     	001C5     	1         	VAR       	data      
+STR5                     	001D4     	1         	VAR       	data      
+STR6                     	001E4     	1         	VAR       	data      
+STR7                     	001F4     	1         	VAR       	data      
+STR8                     	00202     	1         	VAR       	data      
+STR9                     	0020E     	1         	VAR       	data      
+CLOSE                    	00222     	1         	VAR       	data      
+RESULT                   	0023B     	1         	VAR       	data      
+ENTER                    	0024A     	1         	VAR       	data      
+CODE                     	00035     	-5        	SEGMENT   	(ITSELF)  
+OUTPUT_STRING            	00000     	-1        	NEAR      	code      
+OUTPUT                   	00005     	-1        	NEAR      	code      
+EXIT                     	00015     	-1        	NEAR      	code      
+EMPTY_EXIT               	0003C     	-1        	NEAR      	code      
+COUNTER                  	0004E     	-1        	NEAR      	code      
+MOOVE                    	00051     	-1        	NEAR      	code      
+CHECK_IS_SPACE           	00062     	-1        	NEAR      	code      
+CHECK_IS_TAB             	00068     	-1        	NEAR      	code      
+MOOVE_SPACE              	0006E     	-1        	NEAR      	code      
+DELETE                   	0007F     	-1        	NEAR      	code      
+CHECK_2                  	00093     	-1        	NEAR      	code      
+START                    	00099     	-1        	LABEL     	code      
+ISEMPTY                  	00100     	-1        	LABEL     	code      
+STRING_IS_EMPTY          	00114     	-1        	LABEL     	code      
+SLOVO_IS_EMPTY           	00129     	-1        	LABEL     	code      
+FIND                     	0013E     	-1        	LABEL     	code      
+FIND_SYMBOL              	00146     	-1        	LABEL     	code      
+SKIP_SLOVO               	00168     	-1        	LABEL     	code      
+FIND_SLOVO               	0017A     	-1        	LABEL     	code      
+ISEND                    	00189     	-1        	LABEL     	code      
+ISSTART                  	00198     	-1        	LABEL     	code      
+NOTFOUND                 	0019D     	-1        	LABEL     	code      
+FOUND                    	001AC     	-1        	LABEL     	code      
+DELETE_SLOVO             	001BB     	-1        	LABEL     	code      
+===================================================================================================
+[ 9/27/2023  --  8:06:48 PM ] 
+< END >
+ 

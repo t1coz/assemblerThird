@@ -1,0 +1,79 @@
+< THE SYMBOL TABLE >  3lab.exe  --  emu8086 assembler version: 4.05 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00010     	-5        	SEGMENT   	(ITSELF)  
+ARRAYLENGTH              	00000     	2         	VAR       	data      
+INPUTARRAYLENGTHMSGSTR   	00002     	1         	VAR       	data      
+MAXNULL                  	00017     	1         	VAR       	data      
+ERRORINPUTMSGSTR         	00028     	1         	VAR       	data      
+ERRORINPUTARRAYLENGTHMSGSTR	0003D     	1         	VAR       	data      
+INPUTMSGSTR              	0007E     	1         	VAR       	data      
+CURRENTEL                	000A2     	1         	VAR       	data      
+ANSWER                   	000A4     	1         	VAR       	data      
+NUMBUFFER                	000BB     	2         	VAR       	data      
+NUMLENGTH                	000BD     	1         	VAR       	data      
+ENTERREDNUM              	000BE     	1         	VAR       	data      
+NEXTSTR                  	000C7     	1         	VAR       	data      
+TEN                      	000CA     	2         	VAR       	data      
+TWO                      	000CC     	2         	VAR       	data      
+PRECISION                	000CE     	1         	VAR       	data      
+MINUS                    	000CF     	1         	VAR       	data      
+MAX                      	000D0     	2         	VAR       	data      
+MAXTEMP                  	000D2     	2         	VAR       	data      
+ARRAY                    	000D4     	2         	VAR       	data      
+TEMP                     	00110     	2         	VAR       	data      
+OUTPUTARRAY              	00114     	2         	VAR       	data      
+CODE                     	00022     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	LABEL     	code      
+INPUTMAS                 	00010     	-1        	NEAR      	code      
+INPUTARRAYLENGTH         	00017     	-1        	NEAR      	code      
+INPUTARRAYLENGTHLOOP     	0001A     	-1        	LABEL     	code      
+LENGTHERROR              	00036     	-1        	LABEL     	code      
+INPUTARRAY               	0003B     	-1        	NEAR      	code      
+INPUTARRAYLOOP           	00041     	-1        	LABEL     	code      
+RESETNUMBUFFER           	00053     	-1        	NEAR      	code      
+INPUTELEMENTBUFF         	0005A     	-1        	NEAR      	code      
+NEXTSYM                  	00082     	-1        	LABEL     	code      
+CHECKSYM                 	0008A     	-1        	LABEL     	code      
+COMEBACK                 	000A9     	-1        	LABEL     	code      
+FINISH                   	000BE     	-1        	LABEL     	code      
+DOSUB                    	000C2     	-1        	LABEL     	code      
+CHECKMINUS               	000C6     	-1        	LABEL     	code      
+SETMINUS                 	000CE     	-1        	LABEL     	code      
+BADNUM                   	000DB     	-1        	LABEL     	code      
+INPUT                    	000EA     	-1        	NEAR      	code      
+ERRORINPUT               	000EF     	-1        	NEAR      	code      
+SHOWINPUTARRAYLENGTHMSG  	000F7     	-1        	NEAR      	code      
+SHOWINPUTMSG             	00103     	-1        	NEAR      	code      
+FINDMAX                  	0010F     	-1        	NEAR      	code      
+FIND                     	00122     	-1        	LABEL     	code      
+SAVEMAX                  	00136     	-1        	LABEL     	code      
+ENDFIND                  	0013E     	-1        	LABEL     	code      
+MAKENORMAL               	00145     	-1        	NEAR      	code      
+MAKE                     	0015D     	-1        	LABEL     	code      
+RETURN2                  	0018C     	-1        	LABEL     	code      
+MAKENUM                  	00190     	-1        	LABEL     	code      
+JUMP                     	001AD     	-1        	LABEL     	code      
+INCMINUS                 	001C1     	-1        	LABEL     	code      
+INCREASE                 	001CD     	-1        	LABEL     	code      
+RETURN                   	001D9     	-1        	LABEL     	code      
+SAVENUM                  	001E3     	-1        	LABEL     	code      
+GOEND                    	001EC     	-1        	LABEL     	code      
+MAKEMAINPART             	001F2     	-1        	NEAR      	code      
+ST                       	001F7     	-1        	LABEL     	code      
+GO1                      	00209     	-1        	LABEL     	code      
+FIN                      	0020D     	-1        	LABEL     	code      
+LOOP1                    	0020D     	-1        	LABEL     	code      
+IFNOMAINPART             	00221     	-1        	LABEL     	code      
+FIN2                     	00229     	-1        	LABEL     	code      
+SETPLUS                  	00232     	-1        	LABEL     	code      
+SETZNAK                  	00244     	-1        	LABEL     	code      
+FIRSTSYMBOL              	00258     	-1        	LABEL     	code      
+OUTPUT                   	00265     	-1        	NEAR      	code      
+DIVNULL                  	00276     	-1        	LABEL     	code      
+===================================================================================================
+[ 10/12/2023  --  12:48:20 PM ] 
+< END >
+ 

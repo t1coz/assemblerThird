@@ -1,0 +1,519 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+3lab.exe -- emu8086 assembler version: 4.05  
+ 
+[ 10/12/2023  --  12:48:20 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model	small
+[   2]        :                                       .stack	100h
+[   3]        :                                       .data
+[   4]        :                                       
+[   5]        :                                       MaxArrayLength              equ 30
+[   6]        :                                       
+[   7]    0100: 00 00                                 ArrayLength                 dw  ?
+[   8]    0102: 49 6E 70 75 74 20 61 72 72 61 79 20   InputArrayLengthMsgStr      db  'Input array length: $'
+                6C 65 6E 67 74 68 3A 20 24          
+[   9]    0117: 0A 0D 41 6C 6C 20 69 6E 66 69 6E 69   maxNull                     db 0Ah,0Dh,'All infinity','$',0Ah,0Dh
+                74 79 24 0A 0D                      
+[  10]    0128: 0A 0D 49 6E 63 6F 72 72 65 63 74 20   ErrorInputMsgStr            db  0Ah,0Dh,'Incorrect value!',0Ah,0Dh, '$'
+                76 61 6C 75 65 21 0A 0D 24          
+[  11]    013D: 0A 0D 41 72 72 61 79 20 6C 65 6E 67   ErrorInputArrayLengthMsgStr db  0Ah,0Dh,'Array length should be not less than 0 and not bigger than 30!', '$'
+                74 68 20 73 68 6F 75 6C 64 20 62 65 
+                20 6E 6F 74 20 6C 65 73 73 20 74 68 
+                61 6E 20 30 20 61 6E 64 20 6E 6F 74 
+                20 62 69 67 67 65 72 20 74 68 61 6E 
+                20 33 30 21 24                      
+[  12]        :                                       
+[  13]    017E: 0A 0D 49 6E 70 75 74 20 65 6C 65 6D   InputMsgStr                 db 0Ah, 0Dh,'Input element (-32 768..32 767) : $'
+                65 6E 74 20 28 2D 33 32 20 37 36 38 
+                2E 2E 33 32 20 37 36 37 29 3A 20 24 
+                                                    
+[  14]    01A2: 00 00                                 CurrentEl                   db  2 dup(0)
+[  15]        :                                       
+[  16]    01A4: 24 24 24 24 24 24 24 24 24 24 24 24   Answer                      db  20 dup('$'), 0Ah,0Dh, '$'
+                24 24 24 24 24 24 24 24 0A 0D 24    
+[  17]        :                                       
+[  18]    01BB: 00 00                                 NumBuffer                   dw 0
+[  19]        :                                       
+[  20]    01BD: 07                                    NumLength                   db 7
+[  21]    01BE: 24 24 24 24 24 24 24 24 24            EnterredNum                 db 9 dup('$')
+[  22]        :                                       
+[  23]    01C7: 0A 0D 24                              nextStr                     db 0Ah,0Dh,'$'
+[  24]    01CA: 0A 00                                 ten                         dw 10
+[  25]    01CC: 02 00                                 two                         dw 2	
+[  26]    01CE: 05                                    precision                   db  5
+[  27]    01CF: 00                                    minus                       db  0
+[  28]    01D0: 00 00                                 Max                         dw  0
+[  29]    01D2: 00 00                                 MaxTemp                     dw  0
+[  30]    01D4: 00 00 00 00 00 00 00 00 00 00 00 00   Array                       dw  MaxArrayLength dup (0)
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                                                    
+[  31]    0210: 00 00 00 00                           Temp                        dd 0
+[  32]    0214: 2C 01 00 00                           OutputArray                 dd MaxArrayLength dup(0)
+[  33]        :                                       
+[  34]        :                                       
+[  35]        :                                       .code
+[  36]        :                                       
+[  37]    0220:                                       start:                            ;
+[  38]    0220: B8 10 00                              mov	ax,@data                      ;
+[  39]    0223: 8E D8                                 mov	ds,ax                         ;
+[  40]        :                                       ;
+[  41]    0225: 33 C0                                 xor	ax,ax                         ;
+[  42]        :                                       ;
+[  43]    0227: E8 06 00                              call inputMas                     ;
+[  44]    022A: E8 02 01                              call FindMax                      ;
+[  45]    022D: E8 35 01                              call MakeNormal
+[  46]        :                                       ;
+[  47]    0230:                                       inputMas proc
+[  48]    0230: E8 04 00                              call inputArrayLength         ;
+[  49]    0233: E8 25 00                              call inputArray               ;
+[  50]    0236: C3                                    ret                           ;
+[  51]        :                                       endp
+[  52]        :                                       
+[  53]    0237:                                       inputArrayLength proc near
+[  54]    0237: B9 01 00                              mov cx, 1
+[  55]    023A:                                       inputArrayLengthLoop:
+[  56]    023A: E8 DA 00                              call ShowInputArrayLengthMsg
+[  57]    023D: 51                                    push cx                    ;
+[  58]    023E: E8 39 00                              call inputElementBuff
+[  59]    0241: 59                                    pop cx
+[  60]    0242: A3 00 00                              mov ArrayLength,ax
+[  61]    0245: 83 3E 00 00 00                        cmp ArrayLength,0
+[  62]    024A: 7E 0A                                 jle lengthError
+[  63]    024C: 83 3E 00 00 1E                        cmp ArrayLength,30
+[  64]    0251: 7F 03                                 jg  lengthError
+[  65]        :                                       
+[  66]    0253: E2 E5                                 loop inputArrayLengthLoop
+[  67]    0255: C3                                    ret
+[  68]        :                                       endp
+[  69]        :                                       
+[  70]    0256:                                       lengthError:
+[  71]    0256: E8 B6 00                              call ErrorInput
+[  72]    0259: EB DF                                 jmp  inputArrayLengthLoop
+[  73]        :                                       
+[  74]    025B:                                       inputArray proc
+[  75]    025B: 33 FF                                 xor di,di
+[  76]        :                                       
+[  77]    025D: 8B 0E 00 00                           mov cx,ArrayLength
+[  78]    0261:                                       inputArrayLoop:
+[  79]    0261: E8 BF 00                              call ShowInputMsg
+[  80]    0264: 51                                    push cx                    ;
+[  81]    0265: E8 12 00                              call inputElementBuff
+[  82]    0268: 59                                    pop cx
+[  83]        :                                       
+[  84]    0269: 89 85 D4 00                           mov Array[di], ax
+[  85]        :                                       
+[  86]    026D: 83 C7 02                              add di,2
+[  87]    0270: E2 EF                                 loop inputArrayLoop
+[  88]    0272: C3                                    ret
+[  89]        :                                       endp
+[  90]        :                                       
+[  91]        :                                       
+[  92]        :                                       
+[  93]    0273:                                       resetNumBuffer proc
+[  94]    0273: C7 06 BB 00 00 00                     mov NumBuffer, 0
+[  95]    0279: C3                                    ret
+[  96]        :                                       endp
+[  97]        :                                       
+[  98]    027A:                                       inputElementBuff proc
+[  99]        :                                       
+[ 100]    027A: 33 C0                                 xor ax,ax
+[ 101]    027C: 33 C9                                 xor cx,cx
+[ 102]        :                                       
+[ 103]    027E: A0 BD 00                              mov al,NumLength
+[ 104]        :                                       
+[ 105]    0281: A2 BE 00                              mov [EnterredNum],al
+[ 106]    0284: C6 06 BF 00 00                        mov [EnterredNum+1],0
+[ 107]    0289: BA BE 00                              lea dx,EnterredNum
+[ 108]    028C: E8 7B 00                              call input
+[ 109]        :                                       
+[ 110]    028F: 8A 0E BF 00                           mov cl,[EnterredNum+1]
+[ 111]    0293: BE BE 00                              lea si,EnterredNum
+[ 112]    0296: 83 C6 02                              add si,2
+[ 113]        :                                       
+[ 114]    0299: 33 C0                                 xor ax,ax
+[ 115]    029B: 33 DB                                 xor bx,bx
+[ 116]    029D: 33 D2                                 xor dx,dx
+[ 117]    029F: BA 0A 00                              mov dx,10
+[ 118]    02A2:                                       NextSym:
+[ 119]    02A2: 33 C0                                 xor ax,ax
+[ 120]    02A4: AC                                    lodsb
+[ 121]    02A5: 80 FB 00                              cmp bl,0
+[ 122]    02A8: 74 3C                                 je checkMinus
+[ 123]        :                                       
+[ 124]    02AA:                                       checkSym:
+[ 125]        :                                       
+[ 126]    02AA: 3C 30                                 cmp al,'0'
+[ 127]    02AC: 7C 4D                                 jl badNum
+[ 128]    02AE: 3C 39                                 cmp al,'9'
+[ 129]    02B0: 7F 49                                 jg badNum
+[ 130]        :                                       
+[ 131]    02B2: 2D 30 00                              sub ax,'0'
+[ 132]    02B5: 8B D8                                 mov bx,ax
+[ 133]    02B7: 33 C0                                 xor ax,ax
+[ 134]    02B9: A1 BB 00                              mov ax,NumBuffer
+[ 135]        :                                       
+[ 136]    02BC: F7 EA                                 imul dx
+[ 137]    02BE: 70 3B                                 jo badNum
+[ 138]    02C0: 80 3E CF 00 01                        cmp minus,1
+[ 139]    02C5: 74 1B                                 je doSub
+[ 140]    02C7: 03 C3                                 add ax, bx
+[ 141]    02C9:                                       comeBack:
+[ 142]    02C9: 70 30                                 jo badNum
+[ 143]    02CB: A3 BB 00                              mov NumBuffer,ax
+[ 144]    02CE: BB 01 00                              mov bx,1
+[ 145]    02D1: BA 0A 00                              mov dx,10
+[ 146]        :                                       
+[ 147]    02D4: E2 CC                                 loop NextSym
+[ 148]        :                                       
+[ 149]    02D6: A1 BB 00                              mov ax,NumBuffer
+[ 150]        :                                       
+[ 151]        :                                       ;cmp minus,0
+[ 152]        :                                       ;je finish
+[ 153]        :                                       ;mov dx,-1
+[ 154]        :                                       ;mul dx
+[ 155]    02D9: C6 06 CF 00 00                        mov minus,0
+[ 156]        :                                       
+[ 157]        :                                       
+[ 158]    02DE:                                       finish:
+[ 159]    02DE: E8 92 FF                              call resetNumBuffer
+[ 160]    02E1: C3                                    ret
+[ 161]    02E2:                                       doSub:
+[ 162]    02E2: 2B C3                                 sub ax,bx
+[ 163]    02E4: EB E3                                 jmp comeBack
+[ 164]    02E6:                                       checkMinus:
+[ 165]    02E6: FE C3                                 inc bl
+[ 166]    02E8: 3C 2D                                 cmp al, '-'
+[ 167]        :                                       
+[ 168]    02EA: 74 02                                 je SetMinus
+[ 169]        :                                       
+[ 170]    02EC: EB BC                                 jmp checkSym
+[ 171]        :                                       
+[ 172]    02EE:                                       SetMinus:
+[ 173]    02EE: C6 06 CF 00 01                        mov minus,1
+[ 174]    02F3: 49                                    dec cx
+[ 175]    02F4: 83 F9 00                              cmp cx,0
+[ 176]    02F7: 74 02                                 je badNum
+[ 177]    02F9: EB A7                                 jmp NextSym
+[ 178]        :                                       
+[ 179]    02FB:                                       badNum:
+[ 180]    02FB: F8                                    clc
+[ 181]    02FC: C6 06 CF 00 00                        mov minus,0
+[ 182]    0301: E8 0B 00                              call ErrorInput
+[ 183]    0304: E8 6C FF                              call resetNumBuffer
+[ 184]    0307: E9 70 FF                              jmp inputElementBuff
+[ 185]        :                                       endp
+[ 186]        :                                       
+[ 187]    030A:                                       input proc near
+[ 188]    030A: B4 0A                                 mov ah,0Ah
+[ 189]    030C: CD 21                                 int 21h
+[ 190]    030E: C3                                    ret
+[ 191]        :                                       input endp
+[ 192]        :                                       
+[ 193]    030F:                                       ErrorInput proc                   ;
+[ 194]    030F: BA 28 00                              lea dx, ErrorInputMsgStr      ;
+[ 195]    0312: B4 09                                 mov ah, 09h                   ;
+[ 196]    0314: CD 21                                 int 21h                       ;
+[ 197]    0316: C3                                    ret                           ;
+[ 198]        :                                       endp                              ;
+[ 199]        :                                       
+[ 200]        :                                       
+[ 201]    0317:                                       ShowInputArrayLengthMsg proc
+[ 202]    0317: 50                                    push ax
+[ 203]    0318: 52                                    push dx
+[ 204]        :                                       
+[ 205]    0319: B4 09                                 mov ah,09h
+[ 206]    031B: BA 02 00                              lea dx, InputArrayLengthMsgStr
+[ 207]    031E: CD 21                                 int 21h
+[ 208]        :                                       
+[ 209]    0320: 5A                                    pop dx
+[ 210]    0321: 58                                    pop ax
+[ 211]        :                                       
+[ 212]    0322: C3                                    ret
+[ 213]        :                                       endp
+[ 214]        :                                       ;
+[ 215]    0323:                                       ShowInputMsg proc                     ;
+[ 216]    0323: 50                                    push ax
+[ 217]    0324: 52                                    push dx                      ;
+[ 218]        :                                       ;
+[ 219]    0325: B4 09                                 mov ah,09h                    ;output command
+[ 220]    0327: BA 7E 00                              lea dx, InputMsgStr           ;show input msg to user
+[ 221]    032A: CD 21                                 int 21h
+[ 222]        :                                       
+[ 223]    032C: 5A                                    pop dx
+[ 224]    032D: 58                                    pop ax
+[ 225]    032E: C3                                    ret
+[ 226]        :                                       endp
+[ 227]        :                                       ;
+[ 228]    032F:                                       FindMax proc near
+[ 229]    032F: 33 FF                                 xor di,di
+[ 230]        :                                       
+[ 231]    0331: 8B 0E 00 00                           mov cx, ArrayLength
+[ 232]    0335: 8B 85 D4 00                           mov ax,Array[di]
+[ 233]    0339: 83 C7 02                              add di,2
+[ 234]    033C: 49                                    dec cx
+[ 235]    033D: 83 F9 00                              cmp cx,0
+[ 236]    0340: 74 1C                                 je endFind
+[ 237]    0342:                                       find:
+[ 238]    0342: 83 F9 00                              cmp cx,0
+[ 239]    0345: 74 17                                 je endFind
+[ 240]    0347: 8B 95 D4 00                           mov dx,Array[di]
+[ 241]    034B: 3B C2                                 cmp ax,dx
+[ 242]    034D: 7C 07                                 jl saveMax
+[ 243]    034F: 83 C7 02                              add di,2
+[ 244]    0352: E2 EE                                 loop find
+[ 245]        :                                       
+[ 246]    0354: EB 08                                 jmp endFind
+[ 247]        :                                       
+[ 248]    0356:                                       saveMax:
+[ 249]    0356: 8B C2                                 mov ax,dx
+[ 250]    0358: 83 C7 02                              add di,2
+[ 251]    035B: 49                                    dec cx
+[ 252]        :                                       
+[ 253]    035C: EB E4                                 jmp find
+[ 254]    035E:                                       endFind:
+[ 255]    035E: A3 D0 00                              mov Max,ax
+[ 256]    0361: A3 D2 00                              mov MaxTemp,ax
+[ 257]    0364: C3                                    ret                           ;
+[ 258]        :                                       endp                              ;
+[ 259]        :                                       
+[ 260]    0365:                                       MakeNormal proc near
+[ 261]    0365: 83 3E D0 00 00                        cmp Max,0
+[ 262]    036A: 75 03 E9 27 01                        je  divNull
+[ 263]    036F: 33 C9                                 xor cx,cx
+[ 264]    0371: 8A 0E 00 00                           mov cl,byte ptr [ArrayLength]
+[ 265]    0375: 33 FF                                 xor di,di
+[ 266]    0377: 33 F6                                 xor si,si
+[ 267]    0379: 33 C0                                 xor ax,ax
+[ 268]    037B: 33 D2                                 xor dx,dx
+[ 269]        :                                       
+[ 270]    037D:                                       make:
+[ 271]    037D: A1 D2 00                              mov ax,MaxTemp
+[ 272]    0380: A3 D0 00                              mov Max,ax
+[ 273]    0383: C6 06 CF 00 00                        mov minus,0
+[ 274]    0388: 80 F9 00                              cmp cl,0
+[ 275]    038B: 74 7F                                 je goEnd
+[ 276]    038D: 33 D2                                 xor dx,dx
+[ 277]    038F: 8B 84 D4 00                           mov ax, Array[si]
+[ 278]    0393: 32 ED                                 xor ch,ch
+[ 279]    0395: BF A4 00                              lea di,Answer
+[ 280]    0398: 83 3E D0 00 00                        cmp Max,0
+[ 281]    039D: 7E 03 E9 C2 00                        jg setZnak
+[ 282]    03A2: 83 3E D0 00 00                        cmp Max,0
+[ 283]    03A7: 7D 03 E9 A6 00                        jl setPlus
+[ 284]    03AC:                                       return2:
+[ 285]    03AC: C6 05 2B                              mov [di],'+'
+[ 286]    03AF: 47                                    inc di
+[ 287]    03B0:                                       makeNum:
+[ 288]    03B0: 3A 2E CE 00                           cmp ch,precision
+[ 289]    03B4: 7F 4D                                 jg saveNum
+[ 290]    03B6: 8B D8                                 mov bx,ax
+[ 291]        :                                       
+[ 292]    03B8: F7 3E D0 00                           idiv Max
+[ 293]        :                                       
+[ 294]    03BC: 80 3E CF 00 00                        cmp minus,0
+[ 295]    03C1: 75 0A                                 jne jump
+[ 296]        :                                       
+[ 297]        :                                       
+[ 298]    03C3: E8 4C 00                              call makeMainPart
+[ 299]    03C6: 80 3E CF 00 01                        cmp minus,1
+[ 300]    03CB: 74 14                                 je incMinus
+[ 301]        :                                       
+[ 302]    03CD:                                       jump:
+[ 303]    03CD: 3D 00 00                              cmp ax,0
+[ 304]    03D0: 74 1B                                 je increase
+[ 305]        :                                       
+[ 306]    03D2: 04 30                                 add al,'0'
+[ 307]        :                                       
+[ 308]    03D4: 88 05                                 mov [di],al
+[ 309]    03D6: 47                                    inc di
+[ 310]        :                                       
+[ 311]    03D7: 8B C2                                 mov ax,dx
+[ 312]    03D9: F7 2E CA 00                           imul ten
+[ 313]    03DD: FE C5                                 inc ch
+[ 314]    03DF: EB CF                                 jmp makeNum
+[ 315]        :                                       
+[ 316]    03E1:                                       incMinus:
+[ 317]    03E1: 8B C2                                 mov ax,dx
+[ 318]    03E3: F7 26 CA 00                           mul ten
+[ 319]    03E7: FE 06 CF 00                           inc minus
+[ 320]    03EB: EB C3                                 jmp makeNum
+[ 321]        :                                       
+[ 322]    03ED:                                       increase:
+[ 323]    03ED: 04 30                                 add al,'0'
+[ 324]        :                                       
+[ 325]    03EF: 88 05                                 mov [di],al
+[ 326]    03F1: 47                                    inc di
+[ 327]        :                                       
+[ 328]    03F2: 80 3E CF 00 00                        cmp minus,0
+[ 329]    03F7: 74 7F                                 je firstSymbol
+[ 330]    03F9:                                       return:
+[ 331]    03F9: FE C5                                 inc ch
+[ 332]        :                                       
+[ 333]    03FB: 8B C3                                 mov ax,bx
+[ 334]        :                                       
+[ 335]    03FD: F7 2E CA 00                           imul ten
+[ 336]        :                                       
+[ 337]    0401: EB AD                                 jmp makeNum
+[ 338]        :                                       
+[ 339]    0403:                                       saveNum:
+[ 340]    0403: E8 7F 00                              call output
+[ 341]    0406: 83 C6 02                              add si,2
+[ 342]    0409: E9 71 FF                              jmp make
+[ 343]        :                                       
+[ 344]    040C:                                       goEnd:
+[ 345]    040C: B8 00 4C                              mov ax,4c00h
+[ 346]    040F: CD 21                                 int 21h
+[ 347]    0411: C3                                    ret
+[ 348]        :                                       endp
+[ 349]        :                                       
+[ 350]    0412:                                       makeMainPart proc near
+[ 351]    0412: 52                                    push dx
+[ 352]    0413: 51                                    push cx
+[ 353]    0414: 53                                    push bx
+[ 354]    0415: 33 C9                                 xor cx,cx
+[ 355]        :                                       
+[ 356]    0417:                                       st:
+[ 357]    0417: 33 D2                                 xor dx,dx
+[ 358]    0419: F7 3E CA 00                           idiv ten
+[ 359]    041D: 3D 00 00                              cmp ax,0
+[ 360]    0420: 75 07                                 jnz go1
+[ 361]    0422: 83 FA 00                              cmp dx,0
+[ 362]    0425: 75 02                                 jnz go1
+[ 363]    0427: EB 04                                 jmp fin
+[ 364]    0429:                                       go1:
+[ 365]    0429: 41                                    inc cx
+[ 366]    042A: 52                                    push dx
+[ 367]    042B: EB EA                                 jmp st
+[ 368]    042D:                                       fin:
+[ 369]        :                                       
+[ 370]    042D:                                       loop1:
+[ 371]    042D: 83 F9 00                              cmp cx,0
+[ 372]    0430: 74 0F                                 jz ifNoMainPart
+[ 373]    0432: 5B                                    pop bx
+[ 374]    0433: 83 C3 30                              add bx,'0'
+[ 375]    0436: 89 1D                                 mov  [di],bx
+[ 376]    0438: 47                                    inc di
+[ 377]    0439: E2 F2                                 loop loop1
+[ 378]        :                                       
+[ 379]    043B: C6 05 2E                              mov [di],'.'
+[ 380]    043E: 47                                    inc di
+[ 381]        :                                       
+[ 382]    043F: EB 08                                 jmp fin2
+[ 383]        :                                       
+[ 384]    0441:                                       ifNoMainPart:
+[ 385]    0441: C6 05 30                              mov [di],'0'
+[ 386]    0444: 47                                    inc di
+[ 387]    0445: C6 05 2E                              mov [di],'.'
+[ 388]    0448: 47                                    inc di
+[ 389]    0449:                                       fin2:
+[ 390]    0449: C6 06 CF 00 01                        mov minus,1
+[ 391]    044E: 5B                                    pop bx
+[ 392]    044F: 59                                    pop cx
+[ 393]    0450: 5A                                    pop dx
+[ 394]    0451: C3                                    ret
+[ 395]        :                                       endp
+[ 396]        :                                       
+[ 397]    0452:                                       setPlus:
+[ 398]    0452: 50                                    push ax
+[ 399]    0453: A1 D0 00                              mov ax,Max
+[ 400]    0456: BB FF FF                              mov bx,-1
+[ 401]    0459: F7 EB                                 imul bx
+[ 402]    045B: A3 D0 00                              mov Max,ax
+[ 403]    045E: 58                                    pop ax
+[ 404]    045F: F7 EB                                 imul bx
+[ 405]    0461: E9 48 FF                              jmp return2
+[ 406]        :                                       
+[ 407]    0464:                                       setZnak:
+[ 408]    0464: 3D 00 00                              cmp ax,0
+[ 409]    0467: 7C 03 E9 40 FF                        jge return2
+[ 410]    046C: C6 05 2D                              mov [di],'-'
+[ 411]    046F: 47                                    inc di
+[ 412]    0470: BB FF FF                              mov bx,-1
+[ 413]    0473: F7 EB                                 imul bx
+[ 414]    0475: E9 38 FF                              jmp makeNum
+[ 415]        :                                       
+[ 416]        :                                       ;firstSymbol1:
+[ 417]        :                                       ;       mov al,'.'
+[ 418]        :                                       ;      mov [di],al
+[ 419]        :                                       ;     inc di
+[ 420]        :                                       ;    jmp return1
+[ 421]        :                                       
+[ 422]    0478:                                       firstSymbol:
+[ 423]    0478: B0 2E                                 mov al,'.'
+[ 424]    047A: 88 05                                 mov [di],al
+[ 425]    047C: 47                                    inc di
+[ 426]    047D: C6 06 CF 00 01                        mov minus,1
+[ 427]    0482: E9 74 FF                              jmp return
+[ 428]        :                                       ;
+[ 429]    0485:                                       output proc
+[ 430]    0485: BA C7 00                              lea dx,nextStr
+[ 431]    0488: B4 09                                 mov ah,09h
+[ 432]    048A: CD 21                                 int 21h                       ;
+[ 433]    048C: BA A4 00                              lea dx, Answer
+[ 434]    048F: B4 09                                 mov ah,09h
+[ 435]    0491: CD 21                                 int 21h
+[ 436]    0493: FE C9                                 dec cl
+[ 437]    0495: C3                                    ret                           ;
+[ 438]        :                                       endp                              ;
+[ 439]    0496:                                       divNull:
+[ 440]    0496: BA 17 00                              lea dx,maxNull
+[ 441]    0499: B4 09                                 mov ah,09h
+[ 442]    049B: CD 21                                 int 21h
+[ 443]    049D: B8 00 4C                              mov ax,4c00h
+[ 444]    04A0: CD 21                                 int 21h
+[ 445]    04A2: C3                                    ret                                ;
+[ 446]        :                                       end	start                         ;
+[ 447]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: A3      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 04      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: D3      -   check sum (l.byte)
+0013: 98      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 22      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 22      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

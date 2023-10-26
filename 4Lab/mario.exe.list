@@ -1,0 +1,2248 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+mario.exe -- emu8086 assembler version: 4.05  
+ 
+[ 10/26/2023  --  11:11:13 AM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .stack 100h
+[   3]        :                                       
+[   4]        :                                       .data
+[   5]        :                                       
+[   6]    0100: 20 BB 20 BB 20 FF 20 FF 20 FF 20 BB   level db ' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 FF 20 FF 20 FF 20 FF 20 FF 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 FF 20 FF 
+                20 FF 20 BB 20 FF 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 FF 20 FF 20 FF 20 BB 
+                20 FF 20 FF 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 FF 20 FF 20 FF 20 FF 20 FF 20 BB 
+                20 BB 20 BB                         
+[   7]    01DC: 20 BB 20 FF 20 FF 20 FF 20 FF 20 FF   db ' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 FF 20 FF 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 FF 20 FF 20 FF 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 FF 20 FF 20 FF 
+                20 FF 20 FF 20 FF 20 FF 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 FF 20 BB 20 FF 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 FF 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[   8]    02B8: 20 BB 20 BB 20 FF 20 BB 20 FF 20 BB   db ' ',0BBh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 FF 20 FF 20 FF 20 FF 20 FF 20 FF 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 FF 
+                20 BB 20 BB 20 FF 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 FF 
+                20 FF 20 FF 20 FF 20 FF 20 FF 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[   9]    0394: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 FF 20 FF 20 FF 20 FF 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 FF 
+                20 FF 20 FF 20 FF 20 FF 20 FF 20 FF 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 FF 
+                20 BB 20 FF 20 FF 20 FF 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  10]    0470: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 FF 20 BB 20 FF 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 FF 20 FF 
+                20 FF 20 FF 20 FF 20 FF 20 FF 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  11]    054C: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',0FFh,' ',0FFh,' ',0BBh,' ',0FFh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                24 3E 20 BB 20 BB 24 3E 20 BB 20 BB 
+                24 3E 20 BB 20 BB 20 BB 20 BB 20 BB 
+                24 3E 20 BB 20 BB 20 BB 24 3E 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 FF 
+                20 FF 20 FF 20 BB 20 FF 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  12]    0628: 20 33 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',033h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  13]    0704: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'*',06Fh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 BB 20 BB 20 BB 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 2A 6F 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  14]    07E0: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  15]    08BC: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  16]    0998: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 24 3E 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  17]    0A74: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',088h,' ',0FFh,' ',088h,' ',0FFh,' ',088h
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 24 3E 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 24 3E 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 88 20 FF 20 88 
+                20 FF 20 88                         
+[  18]    0B50: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'*',06Fh,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0FFh,' ',088h,' ',0FFh,' ',088h,' ',0FFh
+                20 BB 20 BB 20 BB 20 BB 20 BB 24 3E 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 2A 6F 20 66 20 66 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 FF 20 88 20 FF 
+                20 88 20 FF                         
+[  19]    0C2C: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',088h,' ',0FFh,' ',088h,' ',0FFh,' ',088h
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 66 20 66 20 BB 
+                20 BB 20 66 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 66 20 66 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 88 20 FF 20 88 
+                20 FF 20 88                         
+[  20]    0D08: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 66 20 66 
+                20 66 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  21]    0DE4: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 24 3E 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 24 3E 20 BB 20 BB 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  22]    0EC0: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  23]    0F9C: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 24 3E 20 BB 
+                24 3E 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 24 3E 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 AA 20 AA 
+                20 AA 20 AA 20 BB 20 BB 20 BB 20 BB 
+                24 3E 20 BB 20 BB 20 BB 24 3E 20 BB 
+                20 BB 20 BB 24 3E 20 BB 20 BB 20 BB 
+                20 BB 20 BB 24 3E 20 BB 20 BB 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  24]    1078: 20 BB 20 BB 20 BB 20 BB 20 BB 20 3E   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 24 3E 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 24 3E 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                24 3E 20 BB 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  25]    1154: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,'*',06Fh,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,'*',06Fh,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 66 20 66 2A 6F 
+                20 66 20 66 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 66 
+                20 66 20 BB 20 BB 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 BB 20 BB 20 BB 
+                20 AA 20 AA 20 AA 20 AA 20 BB 20 BB 
+                20 66 20 66 2A 6F 20 66 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  26]    1230: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 AA 20 AA 20 AA 20 AA 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 66 
+                20 BB 20 BB 20 66 20 66 20 66 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 AA 20 AA 
+                20 AA 20 AA 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 AA 20 AA 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  27]    130C: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 AA 20 AA 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 66 20 66 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 AA 20 AA 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB                         
+[  28]    13E8: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,'$',03Eh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                24 3E 20 BB 20 BB 20 BB 20 BB 24 3E 
+                20 BB 20 BB 20 AA 20 AA 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 66 20 66 20 66 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 24 3E 20 BB 20 BB 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 24 3E 20 BB 20 BB 20 BB 
+                20 BB 20 AA 20 AA 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 24 3E 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 24 3E 20 BB 20 BB 20 BB 20 BB 
+                24 3E 20 BB 20 BB 20 BB 20 BB 24 3E 
+                20 BB 20 BB 20 BB 24 3E 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 66 20 66 20 66 
+                20 66 20 66                         
+[  29]    14C4: 20 BB 20 BB 20 BB 20 BB 20 BB 20 BB   db ' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0AAh,' ',0AAh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 AA 20 AA 20 BB 20 BB 
+                20 BB 20 BB 20 66 20 66 20 66 20 66 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 AA 
+                20 AA 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 AA 20 AA 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 66 20 66 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 BB 20 BB 20 66 20 66 20 66 20 66 
+                20 66 20 66                         
+[  30]    15A0: 20 66 20 66 20 66 20 66 20 66 20 66   db ' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',0BBh,' ',0BBh,' ',0BBh,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h,' ',066h
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 BB 20 BB 20 BB 20 BB 20 BB 20 BB 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 BB 20 BB 
+                20 66 20 66 20 66 20 66 20 BB 20 BB 
+                20 BB 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66 20 66 20 66 20 66 20 66 
+                20 66 20 66                         
+[  31]        :                                       
+[  32]    167C: 00 00 00 00 00 00 00 00 00 00 00 00   baseLevel db 5500 dup(?)
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00                         
+[  33]        :                                       
+[  34]    2BF8: 02 00                                 MarioPositionX dw 2       ;220 x 25      ;1-blue, 2-green, 3-blue, 4-red, 5-purple, 6-brown, 7-grey, 8-black
+[  35]    2BFA: 16 00                                 MarioPositionY dw 22                     ;9-blue, A-green, B-blue, C-red, D-purple, F-grey
+[  36]        :                                       	
+[  37]    2BFC: 00 00                                 	xMovement dw 0
+[  38]    2BFE: 00 00                                 yMovement dw 0
+[  39]        :                                       
+[  40]    2C00: 00 00                                 bonusCounter dw 0
+[  41]    2C02: 00                                    lifes db 0
+[  42]        :                                       
+[  43]    2C03: 02 00                                 levelPosition dw 2
+[  44]    2C05: 00                                    coins1 db 0
+[  45]    2C06: 00                                    coins2 db 0
+[  46]        :                                       
+[  47]    2C07: 02 00                                 mobeMovement dw 2
+[  48]    2C09: 00 00                                 mobePosition dw 0
+[  49]        :                                       
+[  50]    2C0B: 19 00                                 xMobe1 dw 25
+[  51]    2C0D: CC                                    Mobe1 db 0CCh
+[  52]    2C0E: 17 00                                 yMobe1 dw 23
+[  53]        :                                       
+[  54]    2C10: 73 00                                 xMobe2 dw 115
+[  55]    2C12: CC                                    Mobe2 db 0CCh
+[  56]    2C13: 12 00                                 yMobe2 dw 18
+[  57]        :                                       
+[  58]    2C15: 33 00                                 xMobe3 dw 51
+[  59]    2C17: CC                                    Mobe3 db 0CCh
+[  60]    2C18: 06 00                                 yMobe3 dw 6
+[  61]        :                                       
+[  62]    2C1A: A3 00                                 xMobe4 dw 163
+[  63]    2C1C: CC                                    Mobe4 db 0CCh
+[  64]    2C1D: 17 00                                 yMobe4 dw 23
+[  65]        :                                       
+[  66]    2C1F: BB 00                                 xMobe5 dw 187
+[  67]    2C21: CC                                    Mobe5 db 0CCh
+[  68]    2C22: 17 00                                 yMobe5 dw 23
+[  69]        :                                       
+[  70]    2C24: A1 00                                 xMobe6 dw 161
+[  71]    2C26: CC                                    Mobe6 db 0CCh
+[  72]    2C27: 10 00                                 yMobe6 dw 16
+[  73]        :                                       	                            ;0CCh
+[  74]        :                                       .code                           ;011h
+[  75]        :                                       
+[  76]    2C30:                                       DisplayCleanScreen proc
+[  77]    2C30: BB 00 00                              mov bx,0
+[  78]    2C33: B4 00                                 mov ah,00
+[  79]    2C35: B0 01                                 mov al,01
+[  80]    2C37: CD 10                                 int 10h
+[  81]        :                                       
+[  82]    2C39: B8 00 B8                              mov ax,0B800h
+[  83]    2C3C: 8E C0                                 mov es,ax
+[  84]        :                                       
+[  85]    2C3E: B9 E8 03                              mov cx,1000
+[  86]    2C41: BB 00 00                              mov bx,0
+[  87]    2C44:                                       Outp:
+[  88]    2C44: 26 C6 07 20                           mov es:bx, ' '
+[  89]    2C48: 43                                    inc bx
+[  90]    2C49: 26 C6 07 88                           mov es:bx, 088h            ;set black color
+[  91]    2C4D: 43                                    inc bx
+[  92]    2C4E: E2 F4                                 loop Outp
+[  93]    2C50: C3                                    ret
+[  94]        :                                       DisplayCleanScreen endp
+[  95]        :                                       
+[  96]    2C51:                                       DisplayStart proc              ;main menu controls display
+[  97]        :                                       
+[  98]    2C51: 50                                    push ax
+[  99]    2C52: 53                                    push bx
+[ 100]    2C53: 51                                    push cx
+[ 101]    2C54: 1E                                    push ds
+[ 102]        :                                       
+[ 103]    2C55: BB 00 00                              mov bx,0
+[ 104]    2C58: B4 00                                 mov ah,00
+[ 105]    2C5A: B0 01                                 mov al,01
+[ 106]    2C5C: CD 10                                 int 10h
+[ 107]        :                                       
+[ 108]    2C5E: B8 00 B8                              mov ax, 0B800h
+[ 109]    2C61: 8E D8                                 mov ds, ax
+[ 110]        :                                       
+[ 111]    2C63: E8 CA FF                              call DisplayCleanScreen
+[ 112]        :                                       
+[ 113]    2C66: 3E C6 06 C4 00 4D                     mov ds:[196],'M'
+[ 114]    2C6C: 3E C6 06 C5 00 0E                     mov ds:[197],00001110b     ;yellow
+[ 115]    2C72: 3E C6 06 C6 00 41                     mov ds:[198],'A'
+[ 116]    2C78: 3E C6 06 C7 00 0E                     mov ds:[199],00001110b
+[ 117]    2C7E: 3E C6 06 C8 00 52                     mov ds:[200],'R'
+[ 118]    2C84: 3E C6 06 C9 00 0E                     mov ds:[201],00001110b
+[ 119]    2C8A: 3E C6 06 CA 00 49                     mov ds:[202],'I'
+[ 120]    2C90: 3E C6 06 CB 00 0E                     mov ds:[203],00001110b
+[ 121]    2C96: 3E C6 06 CC 00 4F                     mov ds:[204],'O'
+[ 122]    2C9C: 3E C6 06 CD 00 0E                     mov ds:[205],00001110b
+[ 123]        :                                       
+[ 124]    2CA2: 3E C6 06 FA 01 43                     mov ds:[506],'C'
+[ 125]    2CA8: 3E C6 06 FB 01 0F                     mov ds:[507],00001111b     ;bold white
+[ 126]    2CAE: 3E C6 06 FC 01 6F                     mov ds:[508],'o'
+[ 127]    2CB4: 3E C6 06 FD 01 0F                     mov ds:[509],00001111b
+[ 128]    2CBA: 3E C6 06 FE 01 6E                     mov ds:[510],'n'
+[ 129]    2CC0: 3E C6 06 FF 01 0F                     mov ds:[511],00001111b
+[ 130]    2CC6: 3E C6 06 00 02 74                     mov ds:[512],'t'
+[ 131]    2CCC: 3E C6 06 01 02 0F                     mov ds:[513],00001111b
+[ 132]    2CD2: 3E C6 06 02 02 72                     mov ds:[514],'r'
+[ 133]    2CD8: 3E C6 06 03 02 0F                     mov ds:[515],00001111b
+[ 134]    2CDE: 3E C6 06 04 02 6F                     mov ds:[516],'o'
+[ 135]    2CE4: 3E C6 06 05 02 0F                     mov ds:[517],00001111b
+[ 136]    2CEA: 3E C6 06 06 02 6C                     mov ds:[518],'l'
+[ 137]    2CF0: 3E C6 06 07 02 0F                     mov ds:[519],00001111b
+[ 138]    2CF6: 3E C6 06 08 02 73                     mov ds:[520],'s'
+[ 139]    2CFC: 3E C6 06 09 02 0F                     mov ds:[521],00001111b
+[ 140]    2D02: 3E C6 06 0A 02 3A                     mov ds:[522],':'
+[ 141]    2D08: 3E C6 06 0B 02 0F                     mov ds:[523],00001111b
+[ 142]        :                                       
+[ 143]    2D0E: 3E C6 06 9A 02 41                     mov ds:[666],'A'
+[ 144]    2D14: 3E C6 06 9B 02 07                     mov ds:[667],00000111b     ;white
+[ 145]    2D1A: 3E C6 06 9C 02 2F                     mov ds:[668],'/'
+[ 146]    2D20: 3E C6 06 9D 02 07                     mov ds:[669],00000111b
+[ 147]    2D26: 3E C6 06 9E 02 44                     mov ds:[670],'D'
+[ 148]    2D2C: 3E C6 06 9F 02 07                     mov ds:[671],00000111b
+[ 149]    2D32: 3E C6 06 A2 02 2D                     mov ds:[674],'-'
+[ 150]    2D38: 3E C6 06 A3 02 07                     mov ds:[675],00000111b
+[ 151]    2D3E: 3E C6 06 A6 02 6D                     mov ds:[678],'m'
+[ 152]    2D44: 3E C6 06 A7 02 07                     mov ds:[679],00000111b
+[ 153]    2D4A: 3E C6 06 A8 02 6F                     mov ds:[680],'o'
+[ 154]    2D50: 3E C6 06 A9 02 07                     mov ds:[681],00000111b
+[ 155]    2D56: 3E C6 06 AA 02 76                     mov ds:[682],'v'
+[ 156]    2D5C: 3E C6 06 AB 02 07                     mov ds:[683],00000111b
+[ 157]    2D62: 3E C6 06 AC 02 65                     mov ds:[684],'e'
+[ 158]    2D68: 3E C6 06 AD 02 07                     mov ds:[685],00000111b
+[ 159]        :                                       
+[ 160]    2D6E: 3E C6 06 3A 03 53                     mov ds:[826],'S'
+[ 161]    2D74: 3E C6 06 3B 03 07                     mov ds:[827],00000111b
+[ 162]    2D7A: 3E C6 06 3C 03 70                     mov ds:[828],'p'
+[ 163]    2D80: 3E C6 06 3D 03 07                     mov ds:[829],00000111b
+[ 164]    2D86: 3E C6 06 3E 03 61                     mov ds:[830],'a'
+[ 165]    2D8C: 3E C6 06 3F 03 07                     mov ds:[831],00000111b
+[ 166]    2D92: 3E C6 06 40 03 63                     mov ds:[832],'c'
+[ 167]    2D98: 3E C6 06 41 03 07                     mov ds:[833],00000111b
+[ 168]    2D9E: 3E C6 06 42 03 65                     mov ds:[834],'e'
+[ 169]    2DA4: 3E C6 06 43 03 07                     mov ds:[835],00000111b
+[ 170]    2DAA: 3E C6 06 46 03 2D                     mov ds:[838],'-'
+[ 171]    2DB0: 3E C6 06 47 03 07                     mov ds:[839],00000111b
+[ 172]    2DB6: 3E C6 06 4A 03 6A                     mov ds:[842],'j'
+[ 173]    2DBC: 3E C6 06 4B 03 07                     mov ds:[843],00000111b
+[ 174]    2DC2: 3E C6 06 4C 03 75                     mov ds:[844],'u'
+[ 175]    2DC8: 3E C6 06 4D 03 07                     mov ds:[845],00000111b
+[ 176]    2DCE: 3E C6 06 4E 03 6D                     mov ds:[846],'m'
+[ 177]    2DD4: 3E C6 06 4F 03 07                     mov ds:[847],00000111b
+[ 178]    2DDA: 3E C6 06 50 03 70                     mov ds:[848],'p'
+[ 179]    2DE0: 3E C6 06 51 03 07                     mov ds:[849],00000111b
+[ 180]        :                                       
+[ 181]    2DE6: 3E C6 06 DA 03 45                     mov ds:[986],'E'
+[ 182]    2DEC: 3E C6 06 DB 03 07                     mov ds:[987],00000111b
+[ 183]    2DF2: 3E C6 06 DC 03 73                     mov ds:[988],'s'
+[ 184]    2DF8: 3E C6 06 DD 03 07                     mov ds:[989],00000111b
+[ 185]    2DFE: 3E C6 06 DE 03 63                     mov ds:[990],'c'
+[ 186]    2E04: 3E C6 06 DF 03 07                     mov ds:[991],00000111b
+[ 187]    2E0A: 3E C6 06 E2 03 2D                     mov ds:[994],'-'
+[ 188]    2E10: 3E C6 06 E3 03 07                     mov ds:[995],00000111b
+[ 189]    2E16: 3E C6 06 E6 03 65                     mov ds:[998],'e'
+[ 190]    2E1C: 3E C6 06 E7 03 07                     mov ds:[999],00000111b
+[ 191]    2E22: 3E C6 06 E8 03 78                     mov ds:[1000],'x'
+[ 192]    2E28: 3E C6 06 E9 03 07                     mov ds:[1001],00000111b
+[ 193]    2E2E: 3E C6 06 EA 03 69                     mov ds:[1002],'i'
+[ 194]    2E34: 3E C6 06 EB 03 07                     mov ds:[1003],00000111b
+[ 195]    2E3A: 3E C6 06 EC 03 74                     mov ds:[1004],'t'
+[ 196]    2E40: 3E C6 06 ED 03 07                     mov ds:[1005],00000111b
+[ 197]        :                                       
+[ 198]    2E46: 3E C6 06 7A 04 45                     mov ds:[1146],'E'
+[ 199]    2E4C: 3E C6 06 7B 04 07                     mov ds:[1147],00000111b
+[ 200]    2E52: 3E C6 06 7C 04 6E                     mov ds:[1148],'n'
+[ 201]    2E58: 3E C6 06 7D 04 07                     mov ds:[1149],00000111b
+[ 202]    2E5E: 3E C6 06 7E 04 74                     mov ds:[1150],'t'
+[ 203]    2E64: 3E C6 06 7F 04 07                     mov ds:[1151],00000111b
+[ 204]    2E6A: 3E C6 06 80 04 65                     mov ds:[1152],'e'
+[ 205]    2E70: 3E C6 06 81 04 07                     mov ds:[1153],00000111b
+[ 206]    2E76: 3E C6 06 82 04 72                     mov ds:[1154],'r'
+[ 207]    2E7C: 3E C6 06 83 04 07                     mov ds:[1155],00000111b
+[ 208]    2E82: 3E C6 06 86 04 2D                     mov ds:[1158],'-'
+[ 209]    2E88: 3E C6 06 87 04 07                     mov ds:[1159],00000111b
+[ 210]    2E8E: 3E C6 06 8A 04 73                     mov ds:[1162],'s'
+[ 211]    2E94: 3E C6 06 8B 04 07                     mov ds:[1163],00000111b
+[ 212]    2E9A: 3E C6 06 8C 04 74                     mov ds:[1164],'t'
+[ 213]    2EA0: 3E C6 06 8D 04 07                     mov ds:[1165],00000111b
+[ 214]    2EA6: 3E C6 06 8E 04 61                     mov ds:[1166],'a'
+[ 215]    2EAC: 3E C6 06 8F 04 07                     mov ds:[1167],00000111b
+[ 216]    2EB2: 3E C6 06 90 04 72                     mov ds:[1168],'r'
+[ 217]    2EB8: 3E C6 06 91 04 07                     mov ds:[1169],00000111b
+[ 218]    2EBE: 3E C6 06 92 04 74                     mov ds:[1170],'t'
+[ 219]    2EC4: 3E C6 06 93 04 07                     mov ds:[1171],00000111b
+[ 220]        :                                       
+[ 221]    2ECA: 32 FF                                 xor bh, bh
+[ 222]    2ECC: B6 19                                 mov dh, 25
+[ 223]    2ECE: B4 02                                 mov ah, 02
+[ 224]    2ED0: CD 10                                 int 10h
+[ 225]        :                                       
+[ 226]    2ED2: 1F                                    pop ds
+[ 227]    2ED3: 59                                    pop cx
+[ 228]    2ED4: 5B                                    pop bx
+[ 229]    2ED5: 58                                    pop ax
+[ 230]        :                                       
+[ 231]    2ED6:                                       WaitInput4:
+[ 232]    2ED6: E8 7C 09                              call Clear
+[ 233]    2ED9: E8 65 09                              call Pause
+[ 234]        :                                       
+[ 235]    2EDC: B4 00                                 mov ah,0
+[ 236]    2EDE: CD 16                                 int 16h                    ;esc checking
+[ 237]    2EE0: 3C 1B                                 cmp al,01Bh
+[ 238]    2EE2: 75 03 E9 60 0A                        je call Exit
+[ 239]    2EE7: 75 01                                 jne next
+[ 240]    2EE9: C3                                    ret
+[ 241]        :                                       
+[ 242]    2EEA:                                       next:
+[ 243]    2EEA: 3C 0D                                 cmp al,0Dh
+[ 244]    2EEC: 75 03 E9 8E 09                        je start
+[ 245]    2EF1: 75 E3                                 jne WaitInput4
+[ 246]        :                                       
+[ 247]    2EF3: C3                                    ret
+[ 248]        :                                       DisplayStart endp
+[ 249]        :                                       
+[ 250]    2EF4:                                       DisplayWin proc                ;display win message and coin stat
+[ 251]    2EF4: 8A 16 05 2B                           mov dl,coins1
+[ 252]    2EF8: 8A 36 06 2B                           mov dh,coins2			  		
+[ 253]    2EFC: 80 C2 30                              add dl,'0'
+[ 254]    2EFF: 80 C6 30                              add dh,'0'
+[ 255]        :                                       
+[ 256]    2F02: 50                                    push ax
+[ 257]    2F03: 53                                    push bx
+[ 258]    2F04: 51                                    push cx
+[ 259]    2F05: 1E                                    push ds
+[ 260]        :                                       
+[ 261]    2F06: BB 00 00                              mov bx,0
+[ 262]    2F09: B4 00                                 mov ah,00
+[ 263]    2F0B: B0 01                                 mov al,01
+[ 264]    2F0D: CD 10                                 int 10h
+[ 265]        :                                       
+[ 266]    2F0F: B8 00 B8                              mov ax, 0B800h
+[ 267]    2F12: 8E D8                                 mov ds, ax
+[ 268]        :                                       
+[ 269]    2F14: E8 19 FD                              call DisplayCleanScreen
+[ 270]        :                                       
+[ 271]    2F17: 3E C6 06 02 02 59                     mov ds:[514],'Y'           ;yellow
+[ 272]    2F1D: 3E C6 06 03 02 0E                     mov ds:[515],00001110b
+[ 273]    2F23: 3E C6 06 04 02 4F                     mov ds:[516],'O'
+[ 274]    2F29: 3E C6 06 05 02 0E                     mov ds:[517],00001110b
+[ 275]    2F2F: 3E C6 06 06 02 55                     mov ds:[518],'U'
+[ 276]    2F35: 3E C6 06 07 02 0E                     mov ds:[519],00001110b
+[ 277]    2F3B: 3E C6 06 0A 02 57                     mov ds:[522],'W'
+[ 278]    2F41: 3E C6 06 0B 02 0E                     mov ds:[523],00001110b
+[ 279]    2F47: 3E C6 06 0C 02 49                     mov ds:[524],'I'
+[ 280]    2F4D: 3E C6 06 0D 02 0E                     mov ds:[525],00001110b
+[ 281]    2F53: 3E C6 06 0E 02 4E                     mov ds:[526],'N'
+[ 282]    2F59: 3E C6 06 0F 02 0E                     mov ds:[527],00001110b
+[ 283]        :                                       
+[ 284]    2F5F: 3E C6 06 7A 04 45                     mov ds:[1146],'E'
+[ 285]    2F65: 3E C6 06 7B 04 07                     mov ds:[1147],00000111b   ;white
+[ 286]    2F6B: 3E C6 06 7C 04 6E                     mov ds:[1148],'n'
+[ 287]    2F71: 3E C6 06 7D 04 07                     mov ds:[1149],00000111b
+[ 288]    2F77: 3E C6 06 7E 04 74                     mov ds:[1150],'t'
+[ 289]    2F7D: 3E C6 06 7F 04 07                     mov ds:[1151],00000111b
+[ 290]    2F83: 3E C6 06 80 04 65                     mov ds:[1152],'e'
+[ 291]    2F89: 3E C6 06 81 04 07                     mov ds:[1153],00000111b
+[ 292]    2F8F: 3E C6 06 82 04 72                     mov ds:[1154],'r'
+[ 293]    2F95: 3E C6 06 83 04 07                     mov ds:[1155],00000111b
+[ 294]    2F9B: 3E C6 06 86 04 2D                     mov ds:[1158],'-'
+[ 295]    2FA1: 3E C6 06 87 04 07                     mov ds:[1159],00000111b
+[ 296]    2FA7: 3E C6 06 8A 04 73                     mov ds:[1162],'s'
+[ 297]    2FAD: 3E C6 06 8B 04 07                     mov ds:[1163],00000111b
+[ 298]    2FB3: 3E C6 06 8C 04 74                     mov ds:[1164],'t'
+[ 299]    2FB9: 3E C6 06 8D 04 07                     mov ds:[1165],00000111b
+[ 300]    2FBF: 3E C6 06 8E 04 61                     mov ds:[1166],'a'
+[ 301]    2FC5: 3E C6 06 8F 04 07                     mov ds:[1167],00000111b
+[ 302]    2FCB: 3E C6 06 90 04 72                     mov ds:[1168],'r'
+[ 303]    2FD1: 3E C6 06 91 04 07                     mov ds:[1169],00000111b
+[ 304]    2FD7: 3E C6 06 92 04 74                     mov ds:[1170],'t'
+[ 305]    2FDD: 3E C6 06 93 04 07                     mov ds:[1171],00000111b
+[ 306]        :                                       
+[ 307]    2FE3: 3E C6 06 DA 03 43                     mov ds:[986],'C'
+[ 308]    2FE9: 3E C6 06 DB 03 0F                     mov ds:[987],00001111b    ;bold white
+[ 309]    2FEF: 3E C6 06 DC 03 6F                     mov ds:[988],'o'
+[ 310]    2FF5: 3E C6 06 DD 03 0F                     mov ds:[989],00001111b
+[ 311]    2FFB: 3E C6 06 DE 03 69                     mov ds:[990],'i'
+[ 312]    3001: 3E C6 06 DF 03 0F                     mov ds:[991],00001111b
+[ 313]    3007: 3E C6 06 E0 03 6E                     mov ds:[992],'n'
+[ 314]    300D: 3E C6 06 E1 03 0F                     mov ds:[993],00001111b
+[ 315]    3013: 3E C6 06 E2 03 73                     mov ds:[994],'s'
+[ 316]    3019: 3E C6 06 E3 03 0F                     mov ds:[995],00001111b
+[ 317]    301F: 3E C6 06 E4 03 3A                     mov ds:[996],':'
+[ 318]    3025: 3E C6 06 E5 03 0F                     mov ds:[997],00001111b
+[ 319]        :                                       
+[ 320]    302B: 3E 88 16 E8 03                        mov ds:[1000],dl
+[ 321]    3030: 3E C6 06 E9 03 0F                     	mov ds:[1001],00001111b
+[ 322]    3036: 3E 88 36 EA 03                        	mov ds:[1002],dh
+[ 323]    303B: 3E C6 06 EB 03 0F                     	mov ds:[1003],00001111b
+[ 324]        :                                       	
+[ 325]    3041: 32 FF                                 	xor bh, bh
+[ 326]    3043: B6 19                                 mov dh, 25
+[ 327]    3045: B4 02                                 mov ah, 02
+[ 328]    3047: CD 10                                 int 10h
+[ 329]        :                                       
+[ 330]    3049: 1F                                    pop ds
+[ 331]    304A: 59                                    pop cx
+[ 332]    304B: 5B                                    pop bx
+[ 333]    304C: 58                                    pop ax
+[ 334]        :                                       
+[ 335]    304D:                                       WaitInput3:
+[ 336]    304D: B4 00                                 mov ah,0
+[ 337]    304F: CD 16                                 int 16h
+[ 338]    3051: 3C 0D                                 cmp al,0Dh
+[ 339]    3053: 75 F8                                 jne WaitInput3
+[ 340]    3055: 75 03 E9 25 08                        je start
+[ 341]        :                                       
+[ 342]    305A: C3                                    ret
+[ 343]        :                                       DisplayWin endp
+[ 344]        :                                       
+[ 345]    305B:                                       DisplayLose proc               ;display lose message and prompt of new game
+[ 346]    305B: 50                                    push ax
+[ 347]    305C: 53                                    push bx
+[ 348]    305D: 51                                    push cx
+[ 349]    305E: 1E                                    push ds
+[ 350]        :                                       
+[ 351]    305F: BB 00 00                              mov bx,0
+[ 352]    3062: B4 00                                 mov ah,00
+[ 353]    3064: B0 01                                 mov al,01
+[ 354]    3066: CD 10                                 int 10h
+[ 355]        :                                       
+[ 356]    3068: B8 00 B8                              mov ax, 0B800h
+[ 357]    306B: 8E D8                                 mov ds, ax
+[ 358]        :                                       
+[ 359]    306D: E8 C0 FB                              call DisplayCleanScreen
+[ 360]        :                                       
+[ 361]    3070: 3E C6 06 FE 01 59                     mov ds:[510],'Y'
+[ 362]    3076: 3E C6 06 FF 01 0C                     mov ds:[511],00001100b
+[ 363]    307C: 3E C6 06 00 02 4F                     mov ds:[512],'O'
+[ 364]    3082: 3E C6 06 01 02 0C                     mov ds:[513],00001100b
+[ 365]    3088: 3E C6 06 02 02 55                     mov ds:[514],'U'
+[ 366]    308E: 3E C6 06 03 02 0C                     mov ds:[515],00001100b
+[ 367]    3094: 3E C6 06 06 02 4C                     mov ds:[518],'L'
+[ 368]    309A: 3E C6 06 07 02 0C                     mov ds:[519],00001100b
+[ 369]    30A0: 3E C6 06 08 02 4F                     mov ds:[520],'O'
+[ 370]    30A6: 3E C6 06 09 02 0C                     mov ds:[521],00001100b
+[ 371]    30AC: 3E C6 06 0A 02 53                     mov ds:[522],'S'
+[ 372]    30B2: 3E C6 06 0B 02 0C                     mov ds:[523],00001100b
+[ 373]    30B8: 3E C6 06 0C 02 45                     mov ds:[524],'E'
+[ 374]    30BE: 3E C6 06 0D 02 0C                     mov ds:[525],00001100b
+[ 375]        :                                       
+[ 376]    30C4: 3E C6 06 7A 04 45                     mov ds:[1146],'E'
+[ 377]    30CA: 3E C6 06 7B 04 07                     mov ds:[1147],00000111b
+[ 378]    30D0: 3E C6 06 7C 04 6E                     mov ds:[1148],'n'
+[ 379]    30D6: 3E C6 06 7D 04 07                     mov ds:[1149],00000111b
+[ 380]    30DC: 3E C6 06 7E 04 74                     mov ds:[1150],'t'
+[ 381]    30E2: 3E C6 06 7F 04 07                     mov ds:[1151],00000111b
+[ 382]    30E8: 3E C6 06 80 04 65                     mov ds:[1152],'e'
+[ 383]    30EE: 3E C6 06 81 04 07                     mov ds:[1153],00000111b
+[ 384]    30F4: 3E C6 06 82 04 72                     mov ds:[1154],'r'
+[ 385]    30FA: 3E C6 06 83 04 07                     mov ds:[1155],00000111b
+[ 386]    3100: 3E C6 06 86 04 2D                     mov ds:[1158],'-'
+[ 387]    3106: 3E C6 06 87 04 07                     mov ds:[1159],00000111b
+[ 388]    310C: 3E C6 06 8A 04 73                     mov ds:[1162],'s'
+[ 389]    3112: 3E C6 06 8B 04 07                     mov ds:[1163],00000111b
+[ 390]    3118: 3E C6 06 8C 04 74                     mov ds:[1164],'t'
+[ 391]    311E: 3E C6 06 8D 04 07                     mov ds:[1165],00000111b
+[ 392]    3124: 3E C6 06 8E 04 61                     mov ds:[1166],'a'
+[ 393]    312A: 3E C6 06 8F 04 07                     mov ds:[1167],00000111b
+[ 394]    3130: 3E C6 06 90 04 72                     mov ds:[1168],'r'
+[ 395]    3136: 3E C6 06 91 04 07                     mov ds:[1169],00000111b
+[ 396]    313C: 3E C6 06 92 04 74                     mov ds:[1170],'t'
+[ 397]    3142: 3E C6 06 93 04 07                     mov ds:[1171],00000111b
+[ 398]        :                                       
+[ 399]    3148: 32 FF                                 xor bh, bh
+[ 400]    314A: B6 19                                 mov dh, 25
+[ 401]    314C: B4 02                                 mov ah, 02
+[ 402]    314E: CD 10                                 int 10h
+[ 403]        :                                       
+[ 404]    3150: 1F                                    pop ds
+[ 405]    3151: 59                                    pop cx
+[ 406]    3152: 5B                                    pop bx
+[ 407]    3153: 58                                    pop ax
+[ 408]        :                                       
+[ 409]    3154:                                       WaitInput2:
+[ 410]    3154: B4 00                                 mov ah,0
+[ 411]    3156: CD 16                                 int 16h
+[ 412]    3158: 3C 0D                                 cmp al,0Dh
+[ 413]    315A: 75 F8                                 jne WaitInput2
+[ 414]    315C: 75 03 E9 1E 07                        je start
+[ 415]        :                                       
+[ 416]    3161: C3                                    ret
+[ 417]        :                                       DisplayLose endp
+[ 418]        :                                       
+[ 419]    3162:                                       DisplayLevel proc
+[ 420]    3162: 32 FF                                 xor bh, bh
+[ 421]    3164: B6 19                                 mov dh, 25
+[ 422]    3166: B4 02                                 mov ah, 02
+[ 423]    3168: CD 10                                 int 10h
+[ 424]        :                                       
+[ 425]    316A: BB 00 00                              mov bx,0
+[ 426]    316D: B4 00                                 mov ah,00
+[ 427]    316F: B0 01                                 mov al,01
+[ 428]    3171: CD 10                                 int 10h
+[ 429]        :                                       
+[ 430]    3173: B8 00 B8                              mov ax,0B800h
+[ 431]    3176: 8E C0                                 mov es,ax
+[ 432]    3178: BF 00 00                              mov di,0
+[ 433]        :                                       
+[ 434]    317B: BE 00 00                              mov si,offset level
+[ 435]    317E: 03 36 03 2B                           add si,LevelPosition
+[ 436]    3182: 83 EE 02                              sub si,2
+[ 437]    3185: B9 D0 07                              mov cx,2000
+[ 438]    3188: BB 00 00                              mov bx,0
+[ 439]    318B: B8 51 00                              mov ax,81
+[ 440]        :                                       
+[ 441]    318E:                                       Output:
+[ 442]    318E: 3B D8                                 cmp bx,ax
+[ 443]    3190: 74 05                                 je Increment
+[ 444]    3192: 43                                    inc bx
+[ 445]    3193: A4                                    movsb
+[ 446]    3194: E2 F8                                 loop Output
+[ 447]    3196: C3                                    ret
+[ 448]        :                                       
+[ 449]    3197:                                       Increment:
+[ 450]    3197: 81 C6 8C 00                           add si,140
+[ 451]    319B: 83 C3 02                              add bx,2
+[ 452]    319E: 05 52 00                              add ax,82
+[ 453]    31A1: EB EB                                 jmp Output
+[ 454]        :                                       
+[ 455]    31A3: C3                                    ret
+[ 456]        :                                       DisplayLevel endp
+[ 457]        :                                       
+[ 458]    31A4:                                       DisplayMario proc
+[ 459]    31A4: 50                                    push ax
+[ 460]    31A5: 53                                    push bx
+[ 461]    31A6: 51                                    push cx
+[ 462]    31A7: 1E                                    push ds
+[ 463]        :                                       
+[ 464]    31A8: E8 59 01                              call MarioPosition
+[ 465]    31AB: B8 00 B8                              mov ax, 0B800h
+[ 466]    31AE: 8E D8                                 mov ds, ax
+[ 467]        :                                       
+[ 468]    31B0: C6 07 7F                              mov byte ptr[bx],01111111b
+[ 469]    31B3: 83 EB 50                              sub bx,80
+[ 470]    31B6: C6 07 44                              mov byte ptr[bx],01000100b
+[ 471]    31B9: 81 C3 A0 00                           add bx,160
+[ 472]    31BD: C6 07 11                              mov byte ptr[bx],00010001b
+[ 473]        :                                       
+[ 474]    31C0: 32 FF                                 xor bh, bh
+[ 475]    31C2: B6 19                                 mov dh, 25
+[ 476]    31C4: B4 02                                 mov ah, 02
+[ 477]    31C6: CD 10                                 int 10h
+[ 478]        :                                       
+[ 479]    31C8: 1F                                    pop ds
+[ 480]    31C9: 59                                    pop cx
+[ 481]    31CA: 5B                                    pop bx
+[ 482]    31CB: 58                                    pop ax
+[ 483]        :                                       
+[ 484]    31CC: C3                                    ret
+[ 485]        :                                       DisplayMario endp
+[ 486]        :                                       
+[ 487]    31CD:                                       DisplayMobs proc
+[ 488]    31CD: BB 00 00                              mov bx,offset level    ;mobe1
+[ 489]    31D0: A1 0E 2B                              mov ax,yMobe1
+[ 490]    31D3: B1 DC                                 mov cl,220
+[ 491]    31D5: F6 E1                                 mul cl
+[ 492]    31D7: 03 06 0B 2B                           add ax,xMobe1
+[ 493]    31DB: 8B F0                                 mov si,ax
+[ 494]    31DD: 8A 26 0D 2B                           mov ah,Mobe1
+[ 495]    31E1: 88 20                                 mov [bx+si],ah
+[ 496]        :                                       
+[ 497]    31E3: BB 00 00                              mov bx,offset level    ;mobe2
+[ 498]    31E6: A1 13 2B                              mov ax,yMobe2
+[ 499]    31E9: B1 DC                                 mov cl,220
+[ 500]    31EB: F6 E1                                 mul cl
+[ 501]    31ED: 03 06 10 2B                           add ax,xMobe2
+[ 502]    31F1: 8B F0                                 mov si,ax
+[ 503]    31F3: 8A 26 12 2B                           mov ah,Mobe2
+[ 504]    31F7: 88 20                                 mov [bx+si],ah
+[ 505]        :                                       
+[ 506]    31F9: BB 00 00                              mov bx,offset level    ;mobe3
+[ 507]    31FC: A1 18 2B                              mov ax,yMobe3
+[ 508]    31FF: B1 DC                                 mov cl,220
+[ 509]    3201: F6 E1                                 mul cl
+[ 510]    3203: 03 06 15 2B                           add ax,xMobe3
+[ 511]    3207: 8B F0                                 mov si,ax
+[ 512]    3209: 8A 26 17 2B                           mov ah,Mobe3
+[ 513]    320D: 88 20                                 mov [bx+si],ah
+[ 514]        :                                       
+[ 515]    320F: BB 00 00                              mov bx,offset level    ;mobe4
+[ 516]    3212: A1 1D 2B                              mov ax,yMobe4
+[ 517]    3215: B1 DC                                 mov cl,220
+[ 518]    3217: F6 E1                                 mul cl
+[ 519]    3219: 03 06 1A 2B                           add ax,xMobe4
+[ 520]    321D: 8B F0                                 mov si,ax
+[ 521]    321F: 8A 26 1C 2B                           mov ah,Mobe4
+[ 522]    3223: 88 20                                 mov [bx+si],ah
+[ 523]        :                                       
+[ 524]    3225: BB 00 00                              mov bx,offset level    ;mobe5
+[ 525]    3228: A1 22 2B                              mov ax,yMobe5
+[ 526]    322B: B1 DC                                 mov cl,220
+[ 527]    322D: F6 E1                                 mul cl
+[ 528]    322F: 03 06 1F 2B                           add ax,xMobe5
+[ 529]    3233: 8B F0                                 mov si,ax
+[ 530]    3235: 8A 26 21 2B                           mov ah,Mobe5
+[ 531]    3239: 88 20                                 mov [bx+si],ah
+[ 532]        :                                       
+[ 533]    323B: BB 00 00                              mov bx,offset level    ;mobe6
+[ 534]    323E: A1 27 2B                              mov ax,yMobe6
+[ 535]    3241: B1 DC                                 mov cl,220
+[ 536]    3243: F6 E1                                 mul cl
+[ 537]    3245: 03 06 24 2B                           add ax,xMobe6
+[ 538]    3249: 8B F0                                 mov si,ax
+[ 539]    324B: 8A 26 26 2B                           mov ah,Mobe6
+[ 540]    324F: 88 20                                 mov [bx+si],ah
+[ 541]        :                                       
+[ 542]    3251: 32 FF                                 xor bh, bh
+[ 543]    3253: B6 19                                 mov dh, 25
+[ 544]    3255: B4 02                                 mov ah, 02
+[ 545]    3257: CD 10                                 int 10h
+[ 546]        :                                       
+[ 547]    3259: C3                                    ret
+[ 548]        :                                       DisplayMobs endp
+[ 549]        :                                       
+[ 550]    325A:                                       DisplayLifes proc
+[ 551]    325A: 8A 16 02 2B                           mov dl,lifes			  		
+[ 552]    325E: 80 C2 30                              add dl,'0'
+[ 553]        :                                       
+[ 554]    3261: 50                                    push ax
+[ 555]    3262: 53                                    push bx
+[ 556]    3263: 51                                    push cx
+[ 557]    3264: 1E                                    push ds
+[ 558]        :                                       
+[ 559]    3265: 80 3E 02 2B 01                        cmp lifes,1
+[ 560]    326A: 75 11                                 jne notDisplay
+[ 561]        :                                       
+[ 562]    326C:                                       Display:
+[ 563]    326C: B8 00 B8                              mov ax, 0B800h
+[ 564]    326F: 8E D8                                 mov ds, ax
+[ 565]        :                                       
+[ 566]    3271: 3E C6 06 38 00 03                     mov ds:[56],03
+[ 567]    3277: 3E C6 06 39 00 35                     mov ds:[57],00110101b
+[ 568]        :                                       
+[ 569]    327D:                                       notDisplay:
+[ 570]    327D: 1F                                    pop ds
+[ 571]    327E: 59                                    pop cx
+[ 572]    327F: 5B                                    pop bx
+[ 573]    3280: 58                                    pop ax
+[ 574]    3281: C3                                    ret
+[ 575]        :                                       DisplayLifes endp
+[ 576]        :                                       
+[ 577]    3282:                                       DisplayCoins proc
+[ 578]    3282: 8A 16 05 2B                           mov dl,coins1
+[ 579]    3286: 8A 36 06 2B                           mov dh,coins2			  		
+[ 580]    328A: 80 C2 30                              add dl,'0'
+[ 581]    328D: 80 C6 30                              add dh,'0'
+[ 582]        :                                       
+[ 583]    3290: 50                                    push ax
+[ 584]    3291: 53                                    push bx
+[ 585]    3292: 51                                    push cx
+[ 586]    3293: 1E                                    push ds
+[ 587]        :                                       
+[ 588]    3294: B8 00 B8                              mov ax, 0B800h
+[ 589]    3297: 8E D8                                 mov ds, ax
+[ 590]        :                                       
+[ 591]    3299: 3E C6 06 3E 00 43                     mov ds:[62], 'C'
+[ 592]    329F: 3E C6 06 3F 00 31                     mov ds:[63],  00110001b     ;1 mig, 2-4 fon, 5 mig, 6-8 simvol
+[ 593]    32A5: 3E C6 06 40 00 6F                     mov ds:[64], 'o'
+[ 594]    32AB: 3E C6 06 41 00 31                     	mov ds:[65],  00110001b
+[ 595]    32B1: 3E C6 06 42 00 69                     mov ds:[66], 'i'
+[ 596]    32B7: 3E C6 06 43 00 31                     	mov ds:[67],  00110001b
+[ 597]    32BD: 3E C6 06 44 00 6E                     mov ds:[68], 'n'
+[ 598]    32C3: 3E C6 06 45 00 31                     	mov ds:[69],  00110001b
+[ 599]    32C9: 3E C6 06 46 00 73                     mov ds:[70], 's'
+[ 600]    32CF: 3E C6 06 47 00 31                     	mov ds:[71],  00110001b
+[ 601]    32D5: 3E C6 06 48 00 3A                     mov ds:[72], ':'
+[ 602]    32DB: 3E C6 06 49 00 31                     	mov ds:[73],  00110001b
+[ 603]        :                                       
+[ 604]    32E1: 3E 88 16 4A 00                        mov ds:[74],dl
+[ 605]    32E6: 3E C6 06 4B 00 31                     	mov ds:[75],00110001b
+[ 606]    32EC: 3E 88 36 4C 00                        	mov ds:[76],dh
+[ 607]    32F1: 3E C6 06 4D 00 31                     	mov ds:[77],00110001b
+[ 608]        :                                       	
+[ 609]    32F7: 32 FF                                 	xor bh, bh
+[ 610]    32F9: B6 19                                 mov dh, 25
+[ 611]    32FB: B4 02                                 mov ah, 02
+[ 612]    32FD: CD 10                                 int 10h
+[ 613]        :                                       	
+[ 614]    32FF: 1F                                    	pop ds
+[ 615]    3300: 59                                    pop cx
+[ 616]    3301: 5B                                    pop bx
+[ 617]    3302: 58                                    pop ax
+[ 618]    3303: C3                                    ret
+[ 619]        :                                       DisplayCoins endp
+[ 620]        :                                       
+[ 621]    3304:                                       MarioPosition proc
+[ 622]    3304: BB FA 2A                              mov bx, offset MarioPositionY
+[ 623]    3307: 8B 07                                 mov ax, [bx]
+[ 624]    3309: B1 50                                 mov cl, 80
+[ 625]    330B: F6 E1                                 mul cl
+[ 626]    330D: BB F8 2A                              mov bx, offset MarioPositionX
+[ 627]    3310: 8B 0F                                 mov cx, [bx]
+[ 628]    3312: 03 C1                                 add ax, cx
+[ 629]    3314: 8B D8                                 mov bx, ax
+[ 630]    3316: 43                                    inc bx
+[ 631]    3317: C3                                    ret
+[ 632]        :                                       MarioPosition endp
+[ 633]        :                                       
+[ 634]    3318:                                       MarioPositionInLevel proc
+[ 635]    3318: BB FA 2A                              mov bx, offset MarioPositionY
+[ 636]    331B: 8B 07                                 mov ax, [bx]
+[ 637]    331D: B1 DC                                 mov cl, 220
+[ 638]    331F: F6 E1                                 mul cl
+[ 639]    3321: BB F8 2A                              mov bx, offset MarioPositionX
+[ 640]    3324: 8B 0F                                 mov cx, [bx]
+[ 641]    3326: 03 C1                                 add ax, cx
+[ 642]    3328: BB 03 2B                              mov bx, offset levelPosition
+[ 643]    332B: 8B 0F                                 mov cx, [bx]
+[ 644]    332D: 03 C1                                 add ax, cx
+[ 645]    332F: 2D 02 00                              sub ax,2
+[ 646]    3332: 8B D8                                 mov bx, ax
+[ 647]    3334: 43                                    inc bx
+[ 648]    3335: C3                                    ret
+[ 649]        :                                       MarioPositionInLevel endp
+[ 650]        :                                       
+[ 651]    3336:                                       MoveMobs proc
+[ 652]    3336: 83 3E 09 2B 00                        cmp mobePosition,0
+[ 653]    333B: 74 11                                 je toRight
+[ 654]    333D: 83 3E 09 2B 0A                        cmp mobePosition,10
+[ 655]    3342: 74 02                                 je toLeft
+[ 656]    3344: EB 0E                                 jmp Contin5
+[ 657]    3346:                                       toLeft:
+[ 658]    3346: C7 06 07 2B FE FF                     mov mobeMovement,-2
+[ 659]    334C: EB 06                                 jmp Contin5
+[ 660]    334E:                                       toRight:
+[ 661]    334E: C7 06 07 2B 02 00                     mov mobeMovement,2
+[ 662]        :                                       
+[ 663]    3354:                                       Contin5:
+[ 664]    3354: BB 00 00                              mov bx,offset level   ;mobe1
+[ 665]    3357: A1 0E 2B                              mov ax,yMobe1
+[ 666]    335A: B1 DC                                 mov cl,220
+[ 667]    335C: F6 E1                                 mul cl
+[ 668]    335E: 03 06 0B 2B                           add ax,xMobe1
+[ 669]    3362: 8B F0                                 mov si,ax
+[ 670]    3364: C6 00 BB                              mov [bx+si],0BBh
+[ 671]    3367: A1 07 2B                              mov ax,mobeMovement
+[ 672]        :                                       
+[ 673]    336A: BB 00 00                              mov bx,offset level   ;mobe2
+[ 674]    336D: A1 13 2B                              mov ax,yMobe2
+[ 675]    3370: B1 DC                                 mov cl,220
+[ 676]    3372: F6 E1                                 mul cl
+[ 677]    3374: 03 06 10 2B                           add ax,xMobe2
+[ 678]    3378: 8B F0                                 mov si,ax
+[ 679]    337A: C6 00 BB                              mov [bx+si],0BBh
+[ 680]    337D: A1 07 2B                              mov ax,mobeMovement
+[ 681]        :                                       
+[ 682]    3380: BB 00 00                              mov bx,offset level   ;mobe3
+[ 683]    3383: A1 18 2B                              mov ax,yMobe3
+[ 684]    3386: B1 DC                                 mov cl,220
+[ 685]    3388: F6 E1                                 mul cl
+[ 686]    338A: 03 06 15 2B                           add ax,xMobe3
+[ 687]    338E: 8B F0                                 mov si,ax
+[ 688]    3390: C6 00 BB                              mov [bx+si],0BBh
+[ 689]    3393: A1 07 2B                              mov ax,mobeMovement
+[ 690]        :                                       
+[ 691]    3396: BB 00 00                              mov bx,offset level   ;mobe4
+[ 692]    3399: A1 1D 2B                              mov ax,yMobe4
+[ 693]    339C: B1 DC                                 mov cl,220
+[ 694]    339E: F6 E1                                 mul cl
+[ 695]    33A0: 03 06 1A 2B                           add ax,xMobe4
+[ 696]    33A4: 8B F0                                 mov si,ax
+[ 697]    33A6: C6 00 BB                              mov [bx+si],0BBh
+[ 698]    33A9: A1 07 2B                              mov ax,mobeMovement
+[ 699]        :                                       
+[ 700]    33AC: BB 00 00                              mov bx,offset level   ;mobe5
+[ 701]    33AF: A1 22 2B                              mov ax,yMobe5
+[ 702]    33B2: B1 DC                                 mov cl,220
+[ 703]    33B4: F6 E1                                 mul cl
+[ 704]    33B6: 03 06 1F 2B                           add ax,xMobe5
+[ 705]    33BA: 8B F0                                 mov si,ax
+[ 706]    33BC: C6 00 BB                              mov [bx+si],0BBh
+[ 707]    33BF: A1 07 2B                              mov ax,mobeMovement
+[ 708]        :                                       
+[ 709]    33C2: BB 00 00                              mov bx,offset level   ;mobe6
+[ 710]    33C5: A1 27 2B                              mov ax,yMobe6
+[ 711]    33C8: B1 DC                                 mov cl,220
+[ 712]    33CA: F6 E1                                 mul cl
+[ 713]    33CC: 03 06 24 2B                           add ax,xMobe6
+[ 714]    33D0: 8B F0                                 mov si,ax
+[ 715]    33D2: C6 00 BB                              mov [bx+si],0BBh
+[ 716]    33D5: A1 07 2B                              mov ax,mobeMovement
+[ 717]        :                                       
+[ 718]    33D8: 01 06 0B 2B                           add xMobe1,ax
+[ 719]    33DC: 01 06 10 2B                           add xMobe2,ax
+[ 720]    33E0: 01 06 15 2B                           add xMobe3,ax
+[ 721]    33E4: 01 06 1A 2B                           add xMobe4,ax
+[ 722]    33E8: 01 06 1F 2B                           add xMobe5,ax
+[ 723]    33EC: 01 06 24 2B                           add xMobe6,ax
+[ 724]    33F0: 01 06 09 2B                           add mobePosition,ax
+[ 725]        :                                       
+[ 726]    33F4: C3                                    ret
+[ 727]        :                                       MoveMobs endp
+[ 728]        :                                       
+[ 729]    33F5:                                       MoveMario proc
+[ 730]    33F5: E8 0C FF                              call MarioPosition
+[ 731]    33F8: 83 3E FC 2A 00                        cmp xMovement,0
+[ 732]    33FD: 7D 03 E9 19 01                        jl call MoveLeft
+[ 733]    3402: 7E 03 E9 3B 02                        jg call MoveRight
+[ 734]    3407: 83 3E FE 2A FF                        cmp yMovement,-1
+[ 735]    340C: 74 02                                 je Jump
+[ 736]    340E: 75 68                                 jne NotMove
+[ 737]        :                                       
+[ 738]    3410:                                       Jump:
+[ 739]    3410: 52                                    push dx
+[ 740]    3411: E8 9D 00                              call MoveUp
+[ 741]        :                                       
+[ 742]    3414: E8 2A 04                              call Pause
+[ 743]        :                                       
+[ 744]    3417: B4 01                                 mov ah,1
+[ 745]    3419: CD 16                                 int 16h
+[ 746]    341B: 3C 64                                 cmp al,'d'
+[ 747]    341D: 75 05                                 jne next1
+[ 748]    341F: 83 06 FC 2A 01                        add xMovement,1
+[ 749]        :                                       
+[ 750]    3424:                                       next1:
+[ 751]    3424: 3C 61                                 cmp al,'a'
+[ 752]    3426: 75 05                                 jne next2
+[ 753]    3428: 83 2E FC 2A 01                        sub xMovement,1
+[ 754]        :                                       
+[ 755]    342D:                                       next2:
+[ 756]    342D: 3C 1B                                 cmp al,01Bh
+[ 757]    342F: 75 03 E9 4B 04                        je start
+[ 758]        :                                       
+[ 759]    3434: E8 1E 04                              call Clear
+[ 760]        :                                       
+[ 761]    3437: 5A                                    pop dx
+[ 762]    3438: 4A                                    dec dx
+[ 763]    3439: 83 FA 00                              cmp dx,0
+[ 764]    343C: 75 D2                                 jne loop Jump
+[ 765]        :                                       
+[ 766]    343E: 83 3E FC 2A 00                        cmp xMovement,0
+[ 767]    3443: 7E 03 E9 FA 01                        jg call MoveRight
+[ 768]    3448: 7D 03 E9 CE 00                        jl call MoveLeft
+[ 769]        :                                       
+[ 770]    344D:                                       Fall:
+[ 771]    344D: E8 0A 03                              call MoveDown
+[ 772]    3450: E8 C5 FE                              call MarioPositionInLevel
+[ 773]    3453: 80 BF B8 01 BB                        cmp [bx+440],0BBh
+[ 774]    3458: 74 F3                                 je Fall
+[ 775]    345A: 80 BF B7 01 24                        cmp [bx+439],'$'
+[ 776]    345F: 74 EC                                 je Fall
+[ 777]    3461: 80 BF B8 01 CC                        cmp [bx+440],0CCh
+[ 778]    3466: 74 E5                                 je Fall
+[ 779]    3468: 80 BF B7 01 03                        cmp [bx+439],03
+[ 780]    346D: 74 DE                                 je Fall
+[ 781]    346F: 80 BF B7 01 01                        cmp [bx+439],01
+[ 782]    3474: 74 D7                                 je Fall
+[ 783]        :                                       
+[ 784]    3476: EB 00                                 jmp NotMove
+[ 785]        :                                       
+[ 786]    3478:                                       NotMove:
+[ 787]    3478: E8 BB FE                              call MoveMobs
+[ 788]    347B: E8 4F FD                              call DisplayMobs
+[ 789]    347E: C7 06 FE 2A 00 00                     mov yMovement,0
+[ 790]    3484: C7 06 FC 2A 00 00                     mov xMovement,0
+[ 791]        :                                       
+[ 792]    348A: E8 8B FE                              call MarioPositionInLevel
+[ 793]        :                                       
+[ 794]    348D: 80 BF 24 FF CC                        cmp [bx-220],0CCh
+[ 795]    3492: 74 0D                                 je haveLifes
+[ 796]    3494: 80 3F CC                              cmp [bx],0CCh
+[ 797]    3497: 74 08                                 je haveLifes
+[ 798]    3499: 80 BF DC 00 CC                        cmp [bx+220],0CCh
+[ 799]    349E: 74 01                                 je haveLifes
+[ 800]    34A0: C3                                    ret
+[ 801]        :                                       
+[ 802]    34A1:                                       haveLifes:
+[ 803]    34A1: 80 3E 02 2B 01                        cmp lifes,1
+[ 804]    34A6: 74 03 E9 B0 FB                        jne call DisplayLose
+[ 805]    34AB: C6 06 02 2B 00                        mov lifes,0
+[ 806]    34B0: C3                                    ret
+[ 807]        :                                       MoveMario endp
+[ 808]        :                                       
+[ 809]    34B1:                                       MoveUp proc
+[ 810]    34B1: E8 8D 03                              call Pause
+[ 811]        :                                       
+[ 812]    34B4: E8 61 FE                              call MarioPositionInLevel
+[ 813]    34B7: 80 BF 48 FE BB                        cmp [bx-440],0BBh
+[ 814]    34BC: 75 02                                 jne isBonus
+[ 815]    34BE: EB 49                                 jmp endUp
+[ 816]        :                                       
+[ 817]    34C0:                                       isBonus:
+[ 818]    34C0: 80 BF 48 FE 6F                        cmp [bx-440],06Fh
+[ 819]    34C5: 75 53                                 jne NotMove4
+[ 820]    34C7: C6 87 48 FE 66                        mov [bx-440],066h
+[ 821]    34CC: 83 3E 00 2B 01                        cmp bonusCounter,1
+[ 822]    34D1: 7E A5                                 jle NotMove
+[ 823]        :                                       
+[ 824]    34D3: 83 3E 00 2B 02                        cmp bonusCounter,2
+[ 825]    34D8: 74 15                                 je givMoney
+[ 826]    34DA: 83 3E 00 2B 03                        cmp bonusCounter,3
+[ 827]    34DF: 74 0E                                 je givMoney
+[ 828]        :                                       
+[ 829]    34E1: 83 3E 00 2B 04                        cmp bonusCounter,4
+[ 830]    34E6: 74 14                                 je givArmor
+[ 831]    34E8: 83 3E 00 2B 05                        cmp bonusCounter,5
+[ 832]    34ED: 74 0D                                 je givArmor
+[ 833]        :                                       
+[ 834]    34EF:                                       givMoney:
+[ 835]    34EF: C6 87 6B FD 01                        mov [bx-661],01 ;smile
+[ 836]    34F4: C6 87 6C FD 3D                        mov [bx-660],03Dh
+[ 837]    34F9: E9 7C FF                              jmp NotMove
+[ 838]        :                                       
+[ 839]    34FC:                                       givArmor:
+[ 840]    34FC: C6 87 6B FD 03                        mov [bx-661],03
+[ 841]    3501: C6 87 6C FD 3D                        mov [bx-660],03Dh
+[ 842]    3506: E9 6F FF                              jmp NotMove
+[ 843]        :                                       
+[ 844]    3509:                                       endUp:
+[ 845]    3509: 83 2E FA 2A 01                        sub MarioPositionY,1
+[ 846]    350E: E8 51 FC                              call DisplayLevel
+[ 847]    3511: E8 90 FC                              call DisplayMario
+[ 848]    3514: E8 6B FD                              call DisplayCoins
+[ 849]    3517: E8 40 FD                              call DisplayLifes
+[ 850]        :                                       
+[ 851]    351A:                                       NotMove4:
+[ 852]    351A: C3                                    ret
+[ 853]        :                                       MoveUp endp
+[ 854]        :                                       
+[ 855]    351B:                                       MoveLeft proc
+[ 856]    351B: E8 FA FD                              call MarioPositionInLevel
+[ 857]    351E: 80 BF D9 00 03                        cmp [bx+217],03
+[ 858]    3523: 75 03 E9 8D 00                        je AddLife1
+[ 859]    3528: 80 BF D9 00 01                        cmp [bx+217],01
+[ 860]    352D: 74 75                                 je AddMoney1
+[ 861]    352F: 80 BF DA 00 66                        cmp [bx+218],066h
+[ 862]    3534: 75 03 E9 EE 00                        je NotMove3
+[ 863]    3539: 80 7F FE 66                           cmp [bx-2],066h
+[ 864]    353D: 75 03 E9 E5 00                        je NotMove3
+[ 865]    3542: 80 BF 22 FF 66                        cmp [bx-222],066h
+[ 866]    3547: 75 03 E9 DB 00                        je NotMove3
+[ 867]    354C: 80 BF DA 00 AA                        cmp [bx+218],0AAh
+[ 868]    3551: 75 03 E9 D1 00                        je NotMove3
+[ 869]    3556: 80 7F FE AA                           cmp [bx-2],0AAh
+[ 870]    355A: 75 03 E9 C8 00                        je NotMove3
+[ 871]    355F: 80 BF 22 FF AA                        cmp [bx-222],0AAh
+[ 872]    3564: 75 03 E9 BE 00                        je NotMove3
+[ 873]        :                                       
+[ 874]    3569: 80 BF 22 FF CC                        cmp [bx-222],0CCh
+[ 875]    356E: 74 23                                 je haveLifes1
+[ 876]    3570: 80 7F FE CC                           cmp [bx-2],0CCh
+[ 877]    3574: 74 1D                                 je haveLifes1
+[ 878]    3576: 80 BF DA 00 CC                        cmp [bx+218],0CCh
+[ 879]    357B: 74 16                                 je haveLifes1
+[ 880]        :                                       
+[ 881]    357D: 80 BF D9 00 24                        cmp [bx+217],'$'
+[ 882]    3582: 74 42                                 je Contin1
+[ 883]    3584: 80 7F FD 24                           cmp [bx-3],'$'
+[ 884]    3588: 74 3C                                 je Contin1
+[ 885]    358A: 80 BF 21 FF 24                        cmp [bx-223],'$'
+[ 886]    358F: 74 35                                 je Contin1
+[ 887]    3591: EB 52                                 jmp Contin11
+[ 888]        :                                       
+[ 889]    3593:                                       haveLifes1:
+[ 890]    3593: 80 3E 02 2B 01                        cmp lifes,1
+[ 891]    3598: 74 03 E9 BE FA                        jne call DisplayLose  ;
+[ 892]    359D: C6 06 02 2B 00                        mov lifes,0
+[ 893]    35A2: EB 41                                 jmp Contin11
+[ 894]        :                                       
+[ 895]    35A4:                                       AddMoney1:
+[ 896]    35A4: 80 06 05 2B 01                        add coins1,1
+[ 897]    35A9: C6 87 D9 00 20                        mov [bx+217],' '
+[ 898]    35AE: C6 87 DA 00 BB                        mov [bx+218],0BBh
+[ 899]    35B3: EB 30                                 jmp Contin11
+[ 900]        :                                       
+[ 901]    35B5:                                       AddLife1:
+[ 902]    35B5: C6 06 02 2B 01                        mov lifes,1
+[ 903]    35BA: C6 87 D9 00 20                        mov [bx+217],' '
+[ 904]    35BF: C6 87 DA 00 BB                        mov [bx+218],0BBh
+[ 905]    35C4: EB 1F                                 jmp Contin11
+[ 906]        :                                       
+[ 907]    35C6:                                       Contin1:
+[ 908]    35C6: E8 62 00                              call TakeCoin
+[ 909]    35C9: C6 87 D9 00 20                        mov [bx+217],' '
+[ 910]    35CE: C6 87 DA 00 BB                        mov [bx+218],0BBh
+[ 911]    35D3: C6 47 FD 20                           mov [bx-3],' '
+[ 912]    35D7: C6 47 FE BB                           mov [bx-2],0BBh
+[ 913]    35DB: C6 87 21 FF 20                        mov [bx-223],' '
+[ 914]    35E0: C6 87 22 FF BB                        mov [bx-222],0BBh
+[ 915]        :                                       
+[ 916]    35E5:                                       Contin11:
+[ 917]        :                                       
+[ 918]    35E5: 83 3E F8 2A 18                        cmp MarioPositionX,24
+[ 919]    35EA: 7D 0E                                 jge Move1
+[ 920]    35EC: 83 3E 03 2B 04                        cmp LevelPosition,4
+[ 921]    35F1: 7C 07                                 jl Move1
+[ 922]    35F3: 83 2E 03 2B 02                        sub LevelPosition,2
+[ 923]    35F8: EB 0F                                 jmp Continue2
+[ 924]        :                                       
+[ 925]    35FA:                                       Move1:
+[ 926]    35FA: 83 3E F8 2A 00                        cmp MarioPositionX,0
+[ 927]    35FF: 77 03 E9 2A 01                        jbe Continue
+[ 928]    3604: 83 2E F8 2A 02                        sub MarioPositionX,2
+[ 929]        :                                       
+[ 930]    3609:                                       Continue2:
+[ 931]    3609: E8 56 FB                              call DisplayLevel
+[ 932]    360C: E8 95 FB                              call DisplayMario
+[ 933]    360F: E8 70 FC                              call DisplayCoins
+[ 934]    3612: E8 45 FC                              call DisplayLifes
+[ 935]        :                                       
+[ 936]    3615: E8 29 02                              call Pause
+[ 937]        :                                       
+[ 938]    3618: 83 06 FC 2A 01                        add xMovement,1
+[ 939]    361D: 83 3E FC 2A 00                        cmp xMovement,0
+[ 940]    3622: 7D 03 E9 F4 FE                        jl call MoveLeft
+[ 941]        :                                       
+[ 942]    3627:                                       NotMove3:
+[ 943]    3627: E9 23 FE                              jmp Fall
+[ 944]    362A: C3                                    ret
+[ 945]        :                                       MoveLeft endp
+[ 946]        :                                       
+[ 947]    362B:                                       TakeCoin proc
+[ 948]    362B: 80 06 06 2B 01                        add coins2,1
+[ 949]    3630: 80 3E 06 2B 0A                        cmp coins2,10
+[ 950]    3635: 75 0A                                 jne taken
+[ 951]    3637: C6 06 06 2B 00                        mov coins2,0
+[ 952]    363C: 80 06 05 2B 01                        add coins1,1
+[ 953]        :                                       
+[ 954]    3641:                                       taken:
+[ 955]    3641: C3                                    ret
+[ 956]        :                                       TakeCoin endp
+[ 957]        :                                       
+[ 958]    3642:                                       MoveRight proc
+[ 959]    3642: E8 D3 FC                              call MarioPositionInLevel
+[ 960]    3645: 80 BF DD 00 03                        cmp [bx+221],03
+[ 961]    364A: 75 03 E9 8D 00                        je AddLife2
+[ 962]    364F: 80 BF DD 00 01                        cmp [bx+221],01
+[ 963]    3654: 74 75                                 je AddMoney2
+[ 964]    3656: 80 BF DE 00 66                        cmp [bx+222],066h
+[ 965]    365B: 75 03 E9 F6 00                        je NotMove1
+[ 966]    3660: 80 7F 02 66                           cmp [bx+2],066h
+[ 967]    3664: 75 03 E9 ED 00                        je NotMove1
+[ 968]    3669: 80 BF 26 FF 66                        cmp [bx-218],066h
+[ 969]    366E: 75 03 E9 E3 00                        je NotMove1
+[ 970]    3673: 80 BF DE 00 AA                        cmp [bx+222],0AAh
+[ 971]    3678: 75 03 E9 D9 00                        je NotMove1
+[ 972]    367D: 80 7F 02 AA                           cmp [bx+2],0AAh
+[ 973]    3681: 75 03 E9 D0 00                        je NotMove1
+[ 974]    3686: 80 BF 26 FF AA                        cmp [bx-218],0AAh
+[ 975]    368B: 75 03 E9 C6 00                        je NotMove1
+[ 976]        :                                       
+[ 977]    3690: 80 BF 26 FF CC                        cmp [bx-218],0CCh
+[ 978]    3695: 74 23                                 je haveLifes2
+[ 979]    3697: 80 7F 02 CC                           cmp [bx+2],0CCh
+[ 980]    369B: 74 1D                                 je haveLifes2
+[ 981]    369D: 80 BF DE 00 CC                        cmp [bx+222],0CCh
+[ 982]    36A2: 74 16                                 je haveLifes2
+[ 983]        :                                       
+[ 984]    36A4: 80 BF DD 00 24                        cmp [bx+221],'$'
+[ 985]    36A9: 74 42                                 je Contin2
+[ 986]    36AB: 80 7F 01 24                           cmp [bx+1],'$'
+[ 987]    36AF: 74 3C                                 je Contin2
+[ 988]    36B1: 80 BF 25 FF 24                        cmp [bx-219],'$'
+[ 989]    36B6: 74 35                                 je Contin2
+[ 990]    36B8: EB 52                                 jmp Contin22
+[ 991]        :                                       
+[ 992]    36BA:                                       haveLifes2:
+[ 993]    36BA: 80 3E 02 2B 01                        cmp lifes,1
+[ 994]    36BF: 74 03 E9 97 F9                        jne call DisplayLose
+[ 995]    36C4: C6 06 02 2B 00                        mov lifes,0
+[ 996]    36C9: EB 41                                 jmp Contin22
+[ 997]        :                                       
+[ 998]    36CB:                                       AddMoney2:
+[ 999]    36CB: 80 06 05 2B 01                        add coins1,1
+[1000]    36D0: C6 87 DD 00 20                        mov [bx+221],' '
+[1001]    36D5: C6 87 DE 00 BB                        mov [bx+222],0BBh
+[1002]    36DA: EB 30                                 jmp Contin22
+[1003]        :                                       
+[1004]    36DC:                                       AddLife2:
+[1005]    36DC: C6 06 02 2B 01                        mov lifes,1
+[1006]    36E1: C6 87 DD 00 20                        mov [bx+221],' '
+[1007]    36E6: C6 87 DE 00 BB                        mov [bx+222],0BBh
+[1008]    36EB: EB 1F                                 jmp Contin22
+[1009]        :                                       
+[1010]    36ED:                                       Contin2:
+[1011]    36ED: E8 3B FF                              call TakeCoin
+[1012]    36F0: C6 87 DD 00 20                        mov [bx+221],' '
+[1013]    36F5: C6 87 DE 00 BB                        mov [bx+222],0BBh
+[1014]    36FA: C6 47 01 20                           mov [bx+1],' '
+[1015]    36FE: C6 47 02 BB                           mov [bx+2],0BBh
+[1016]    3702: C6 87 25 FF 20                        mov [bx-219],' '
+[1017]    3707: C6 87 26 FF BB                        mov [bx-218],0BBh
+[1018]        :                                       
+[1019]    370C:                                       Contin22:
+[1020]        :                                       
+[1021]    370C: 83 3E F8 2A 32                        cmp MarioPositionX,50
+[1022]    3711: 76 0F                                 jbe Move2
+[1023]    3713: 81 3E 03 2B 8C 00                     cmp LevelPosition,140
+[1024]    3719: 7F 07                                 jg Move2
+[1025]    371B: 83 06 03 2B 02                        add LevelPosition,2
+[1026]    3720: EB 0C                                 jmp Continue
+[1027]        :                                       
+[1028]    3722:                                       Move2:
+[1029]    3722: 83 3E F8 2A 4E                        cmp MarioPositionX,78
+[1030]    3727: 7D 05                                 jge Continue
+[1031]    3729: 83 06 F8 2A 02                        add MarioPositionX,2
+[1032]        :                                       
+[1033]    372E:                                       Continue:
+[1034]    372E: E8 31 FA                              call DisplayLevel
+[1035]    3731: E8 70 FA                              call DisplayMario
+[1036]    3734: E8 4B FB                              call DisplayCoins
+[1037]    3737: E8 20 FB                              call DisplayLifes
+[1038]        :                                       
+[1039]    373A: E8 04 01                              call Pause
+[1040]        :                                       
+[1041]    373D: 83 3E F8 2A 4C                        cmp MarioPositionX,76
+[1042]    3742: 7C 03 E9 AD F7                        jge call DisplayWin
+[1043]        :                                       
+[1044]    3747: 83 2E FC 2A 01                        sub xMovement,1
+[1045]    374C: 83 3E FC 2A 00                        cmp xMovement,0
+[1046]    3751: 7E 03 E9 EC FE                        jg call MoveRight
+[1047]        :                                       
+[1048]    3756:                                       NotMove1:
+[1049]    3756: E9 F4 FC                              jmp Fall
+[1050]    3759: C3                                    ret
+[1051]        :                                       MoveRight endp
+[1052]        :                                       
+[1053]    375A:                                       MoveDown proc
+[1054]    375A: E8 E4 00                              call Pause
+[1055]        :                                       
+[1056]    375D: E8 B8 FB                              call MarioPositioninLevel
+[1057]    3760: 80 BF B7 01 03                        cmp [bx+439],03
+[1058]    3765: 75 03 E9 91 00                        je AddLife3
+[1059]    376A: 80 BF B7 01 01                        cmp [bx+439],01
+[1060]    376F: 74 79                                 je AddMoney3
+[1061]    3771: 80 BF B8 01 CC                        cmp [bx+440],0CCh
+[1062]    3776: 74 02                                 je KillMobe
+[1063]    3778: 75 58                                 jne NotMobe
+[1064]        :                                       
+[1065]    377A:                                       KillMobe:
+[1066]    377A: A1 F8 2A                              mov ax,MarioPositionX
+[1067]    377D: 2D 01 00                              sub ax,1
+[1068]    3780: 03 06 03 2B                           add ax,levelPosition
+[1069]    3784: 39 06 0B 2B                           cmp xMobe1,ax
+[1070]    3788: 74 20                                 je  mb1
+[1071]    378A: 39 06 10 2B                           cmp xMobe2,ax
+[1072]    378E: 74 21                                 je  mb2
+[1073]    3790: 39 06 15 2B                           cmp xMobe3,ax
+[1074]    3794: 74 22                                 je  mb3
+[1075]    3796: 39 06 1A 2B                           cmp xMobe4,ax
+[1076]    379A: 74 23                                 je  mb4
+[1077]    379C: 39 06 1F 2B                           cmp xMobe5,ax
+[1078]    37A0: 74 24                                 je  mb5
+[1079]    37A2: 39 06 24 2B                           cmp xMobe6,ax
+[1080]    37A6: 74 25                                 je  mb6
+[1081]    37A8: EB 28                                 jmp NotMobe
+[1082]    37AA:                                       mb1:
+[1083]    37AA: C6 06 0D 2B BB                        mov Mobe1,0BBh
+[1084]    37AF: EB 21                                 jmp NotMobe
+[1085]    37B1:                                       mb2:
+[1086]    37B1: C6 06 12 2B BB                        mov Mobe2,0BBh
+[1087]    37B6: EB 1A                                 jmp NotMobe
+[1088]    37B8:                                       mb3:
+[1089]    37B8: C6 06 17 2B BB                        mov Mobe3,0BBh
+[1090]    37BD: EB 13                                 jmp NotMobe
+[1091]    37BF:                                       mb4:
+[1092]    37BF: C6 06 1C 2B BB                        mov Mobe4,0BBh
+[1093]    37C4: EB 0C                                 jmp NotMobe
+[1094]    37C6:                                       mb5:
+[1095]    37C6: C6 06 21 2B BB                        mov Mobe5,0BBh
+[1096]    37CB: EB 05                                 jmp NotMobe
+[1097]    37CD:                                       mb6:
+[1098]    37CD: C6 06 26 2B BB                        mov Mobe6,0BBh
+[1099]        :                                       
+[1100]    37D2:                                       NotMobe:
+[1101]    37D2: E8 F8 F9                              call DisplayMobs
+[1102]    37D5: E8 40 FB                              call MarioPositionInLevel
+[1103]    37D8: 80 BF B8 01 BB                        cmp [bx+440],0BBh
+[1104]    37DD: 75 02                                 jne Money3
+[1105]    37DF: EB 41                                 jmp Contin333
+[1106]        :                                       
+[1107]    37E1:                                       Money3:
+[1108]    37E1: 80 BF B7 01 24                        cmp [bx+439],'$'
+[1109]    37E6: 74 24                                 je Contin3
+[1110]    37E8: 75 31                                 jne Contin33
+[1111]        :                                       
+[1112]    37EA:                                       AddMoney3:
+[1113]    37EA: 80 06 05 2B 01                        add coins1,1
+[1114]    37EF: C6 87 B7 01 20                        mov [bx+439],' '
+[1115]    37F4: C6 87 B8 01 BB                        mov [bx+440],0BBh
+[1116]    37F9: EB 27                                 jmp Contin333
+[1117]        :                                       
+[1118]    37FB:                                       AddLife3:
+[1119]    37FB: C6 06 02 2B 01                        mov lifes,1
+[1120]    3800: C6 87 B7 01 20                        mov [bx+439],' '
+[1121]    3805: C6 87 B8 01 BB                        mov [bx+440],0BBh
+[1122]    380A: EB 16                                 jmp Contin333
+[1123]        :                                       
+[1124]    380C:                                       Contin3:
+[1125]    380C: E8 1C FE                              call TakeCoin
+[1126]    380F: C6 87 B7 01 20                        mov [bx+439],' '
+[1127]    3814: C6 87 B8 01 BB                        mov [bx+440],0BBh
+[1128]    3819: EB 07                                 jmp Contin333
+[1129]        :                                       
+[1130]    381B:                                       Contin33:
+[1131]    381B: 80 BF B8 01 CC                        cmp [bx+440],0CCh
+[1132]    3820: 75 05                                 jne NotMove2
+[1133]        :                                       
+[1134]    3822:                                       Contin333:
+[1135]    3822: 83 06 FA 2A 01                        add MarioPositionY,1
+[1136]        :                                       
+[1137]    3827:                                       NotMove2:
+[1138]    3827: E8 A3 F9                              call DisplayMobs
+[1139]    382A: E8 35 F9                              call DisplayLevel
+[1140]    382D: E8 74 F9                              call DisplayMario
+[1141]    3830: E8 4F FA                              call DisplayCoins
+[1142]    3833: E8 24 FA                              call DisplayLifes
+[1143]        :                                       
+[1144]    3836: 83 3E FA 2A 17                        cmp MarioPositionY,23
+[1145]    383B: 75 03 E9 1B F8                        je call DisplayLose
+[1146]        :                                       
+[1147]    3840: C3                                    ret
+[1148]        :                                       MoveDown endp
+[1149]        :                                       
+[1150]    3841:                                       Pause proc
+[1151]        :                                       
+[1152]    3841: 56                                    push si
+[1153]        :                                       
+[1154]    3842: BE 01 00                              mov si,1
+[1155]    3845: B4 00                                 mov ah,0
+[1156]    3847: CD 1A                                 int 1Ah
+[1157]        :                                       
+[1158]    3849: 8B DA                                 mov bx,dx
+[1159]    384B: 03 DE                                 add bx,si
+[1160]    384D:                                       Stay:
+[1161]    384D: CD 1A                                 int 1Ah
+[1162]    384F: 3B D3                                 cmp dx,bx
+[1163]    3851: 75 FA                                 jne Stay
+[1164]    3853: 5E                                    pop si
+[1165]    3854: C3                                    ret
+[1166]        :                                       Pause endp
+[1167]        :                                       
+[1168]    3855:                                       Clear proc
+[1169]    3855: FA                                    cli
+[1170]    3856: 2B C0                                 sub  AX,AX
+[1171]    3858: 8E C0                                 mov  ES,AX
+[1172]    385A: 26 A0 1A 04                           mov  AL,ES:[41AH]
+[1173]    385E: 26 A2 1C 04                           mov  ES:[41CH],AL
+[1174]    3862: FB                                    sti
+[1175]    3863: C3                                    ret
+[1176]        :                                       Clear endp
+[1177]        :                                       
+[1178]    3864:                                       main:
+[1179]    3864: B8 10 00                              mov ax,@data
+[1180]    3867: 8E D8                                 mov ds,ax
+[1181]        :                                       
+[1182]    3869: B9 7C 15                              mov cx,5500
+[1183]    386C: BE 00 00                              mov si,0
+[1184]        :                                       
+[1185]    386F:                                       copy:
+[1186]    386F: BB 00 00                              mov bx,offset level
+[1187]    3872: 8A 20                                 mov ah,[bx+si]
+[1188]    3874: BB 7C 15                              mov bx,offset baseLevel
+[1189]    3877: 88 20                                 mov [bx+si],ah
+[1190]    3879: 46                                    inc si
+[1191]    387A: E2 F3                                 loop copy
+[1192]        :                                       
+[1193]    387C: E8 D2 F3                              call DisplayStart
+[1194]        :                                       
+[1195]    387F:                                       start:
+[1196]    387F: B9 7C 15                              mov cx,5500
+[1197]    3882: BE 00 00                              mov si,0
+[1198]        :                                       
+[1199]    3885: C6 06 0D 2B CC                        mov Mobe1,0CCh
+[1200]    388A: C6 06 12 2B CC                        mov Mobe2,0CCh
+[1201]    388F: C6 06 17 2B CC                        mov Mobe3,0CCh
+[1202]    3894: C6 06 1C 2B CC                        mov Mobe4,0CCh
+[1203]    3899: C6 06 21 2B CC                        mov Mobe5,0CCh
+[1204]    389E: C6 06 26 2B CC                        mov Mobe6,0CCh
+[1205]    38A3: C6 06 02 2B 00                        mov lifes,0
+[1206]        :                                       
+[1207]    38A8:                                       copy2:
+[1208]    38A8: BB 7C 15                              mov bx,offset baseLevel
+[1209]    38AB: 8A 20                                 mov ah,[bx+si]
+[1210]    38AD: BB 00 00                              mov bx,offset level
+[1211]    38B0: 88 20                                 mov [bx+si],ah
+[1212]    38B2: 46                                    inc si
+[1213]    38B3: E2 F3                                 loop copy2
+[1214]        :                                       
+[1215]    38B5: C7 06 F8 2A 02 00                     mov MarioPositionX,2
+[1216]    38BB: C7 06 FA 2A 16 00                     mov MarioPositionY,22
+[1217]    38C1: C7 06 03 2B 02 00                     mov LevelPosition,2
+[1218]    38C7: C6 06 05 2B 00                        mov coins1,0
+[1219]    38CC: C6 06 06 2B 00                        mov coins2,0
+[1220]        :                                       
+[1221]    38D1: E8 F9 F8                              call DisplayMobs
+[1222]    38D4: E8 8B F8                              call DisplayLevel
+[1223]    38D7: E8 CA F8                              call DisplayMario
+[1224]    38DA: E8 A5 F9                              call DisplayCoins
+[1225]    38DD: E8 7A F9                              call DisplayLifes
+[1226]    38E0: EB 32                                 jmp WaitInput
+[1227]        :                                       
+[1228]    38E2:                                       RightEntered:
+[1229]    38E2: C7 06 FC 2A 01 00                     mov xMovement,1
+[1230]    38E8: E8 0A FB                              call MoveMario
+[1231]    38EB: EB 27                                 jmp WaitInput
+[1232]        :                                       
+[1233]    38ED:                                       LeftEntered:
+[1234]    38ED: C7 06 FC 2A FF FF                     mov xMovement,-1
+[1235]    38F3: E8 FF FA                              call MoveMario
+[1236]    38F6: EB 1C                                 jmp WaitInput
+[1237]        :                                       
+[1238]    38F8:                                       UpEntered:
+[1239]    38F8: E8 5A FF                              call Clear
+[1240]    38FB: C7 06 FE 2A FF FF                     mov yMovement,-1
+[1241]    3901: BA 06 00                              mov dx,6
+[1242]    3904: E8 EE FA                              call MoveMario
+[1243]    3907: EB 0B                                 jmp WaitInput
+[1244]        :                                       
+[1245]    3909:                                       DownEntered:
+[1246]    3909: C7 06 FE 2A 01 00                     mov yMovement,1
+[1247]    390F: E8 E3 FA                              call MoveMario
+[1248]    3912: EB 00                                 jmp WaitInput
+[1249]        :                                       
+[1250]    3914:                                       WaitInput:
+[1251]    3914: E8 3E FF                              call Clear
+[1252]        :                                       
+[1253]    3917: E8 27 FF                              call Pause
+[1254]        :                                       
+[1255]    391A: 83 06 00 2B 01                        add bonusCounter,1
+[1256]    391F: 83 3E 00 2B 05                        cmp bonusCounter,5
+[1257]    3924: 74 02                                 je ClearBonusCounter
+[1258]    3926: EB 06                                 jmp NotClear
+[1259]        :                                       
+[1260]    3928:                                       ClearBonusCounter:
+[1261]    3928: C7 06 00 2B 00 00                     mov bonusCounter,0
+[1262]        :                                       
+[1263]    392E:                                       NotClear:
+[1264]    392E: B4 01                                 mov ah,1
+[1265]    3930: CD 16                                 int 16h
+[1266]    3932: 3C 64                                 cmp al,'d'         ;4Dh
+[1267]    3934: 74 AC                                 je RightEntered
+[1268]    3936: 3C 61                                 cmp al,'a'         ;4Bh
+[1269]    3938: 74 B3                                 je LeftEntered
+[1270]        :                                       
+[1271]    393A: 3C 20                                 cmp al,' '         ;48h
+[1272]    393C: 74 BA                                 je UpEntered
+[1273]        :                                       
+[1274]    393E: 3C 1B                                 cmp al,01Bh
+[1275]    3940: 75 03 E9 0C F3                        je call DisplayStart
+[1276]        :                                       
+[1277]    3945: EB CD                                 jmp WaitInput
+[1278]        :                                       
+[1279]    3947:                                       Exit proc
+[1280]    3947: B8 00 4C                              mov ax,4C00h
+[1281]    394A: CD 21                                 int 21h
+[1282]        :                                       Exit endp
+[1283]        :                                       
+[1284]        :                                       end main
+[1285]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 4C      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 1E      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: 48      -   check sum (l.byte)
+0013: 25      -   check sum (h.byte)
+0014: 34      -   IP - instruction pointer (l.byte)
+0015: 0C      -   IP - instruction pointer (h.byte)
+0016: C3      -   CS - code segment (l.byte)
+0017: 02      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 35      -   relocation table - offset inside segment (l.byte)
+001F: 0C      -   relocation table - offset inside segment (h.byte)
+0020: C3      -   relocation table - segment anchor (l.byte)
+0021: 02      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

@@ -115,7 +115,7 @@ inputElementBuff proc
     xor bx,bx                        ;bx = 0
     xor dx,dx                        ;dx = 0
     mov dx,10        
-    NextSym:
+    NextSym:                         ;for each character in the string
          xor ax,ax
          lodsb                       ;loads the byte addressed by si into al
          cmp bl,0
@@ -123,12 +123,12 @@ inputElementBuff proc
     
     checkSym:
          
-         cmp al,'0'
+         cmp al,'0'                  ;if 0 - 9, then convert to integer
          jl badNum
          cmp al,'9'
          jg badNum
          
-         sub ax,'0'
+         sub ax,'0'                 ;turn in integer
          mov bx,ax
          xor ax,ax
          mov ax,NumBuffer
@@ -224,7 +224,7 @@ FindMax proc near
     xor di,di                       ;di = 0
                           
     mov cx, ArrayLength
-    mov ax,Array[di]
+    mov ax, Array[di]
     add di,2                        ;value part of array of numbers
     dec cx
     cmp cx,0
@@ -262,7 +262,7 @@ MakeNormal proc near
     xor ax,ax                       ;ax = 0
     xor dx,dx                       ;dx = 0
     
-    make:
+    make:                           ;each number in array
         mov ax,MaxTemp
         mov Max,ax                  ;putting maxTemp in Max
         mov minus,0                 ;set no minus
@@ -281,7 +281,7 @@ MakeNormal proc near
             inc di
     makeNum:                        ;making precision
         cmp ch,precision
-        jg saveNum                  ;if precision is enough
+        jg saveNum                  ;if precision is enough save and go to next
         mov bx,ax
         
         idiv Max                    ;divide ax by max
@@ -296,7 +296,7 @@ MakeNormal proc near
         
         jump:
         cmp ax,0
-        je increase
+        je increase                 ;checks sign and 
         
         add al,'0'                  ;convert to ascii
         
@@ -355,15 +355,15 @@ st:
     jmp fin    
 go1:
     inc cx
-    push dx
+    push dx                          ;saving remainder
     jmp st
 fin:
 
 loop1:
-    cmp cx,0
+    cmp cx,0                       ;if no main
     jz ifNoMainPart
     pop bx
-    add bx,'0'
+    add bx,'0'                     ;convert to ascii
     mov  [di],bx                   ;set character
     inc di
 loop loop1
@@ -379,7 +379,7 @@ ifNoMainPart:
     mov [di],'.'
     inc di
 fin2:
-    mov minus,1                    ;set minus end pop everything else
+    mov minus,1                    ;set minus and pop everything else
     pop bx
     pop cx
     pop dx        
@@ -387,22 +387,22 @@ fin2:
 endp
     
 setPlus:                          
-    push ax
+    push ax                       ;push array number in stack
     mov ax,Max
     mov bx,-1
-    imul bx                       ;making value in ax negative 
+    imul bx                       ;making Max positive 
     mov Max,ax
     pop ax
-    imul bx                       ;making value in ax positive
-    jmp return2
+    imul bx                       ;making array value negative positive
+    jmp return2                   ;set +
 
 setZnak:                          
-    cmp ax,0
-    jge return2                   ;set + if element is greater than 0
+    cmp ax,0                      ;value from array
+    jge return2                   ;set + if max and array numbers are greater than 0
     mov [di],'-'                  ;otherwise set -
     inc di
     mov bx,-1
-    imul bx                       ;making value in ax negative
+    imul bx                       ;making array value negative
     jmp makeNum
        
 firstSymbol:                      ;set point and minus
